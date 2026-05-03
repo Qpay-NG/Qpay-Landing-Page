@@ -466,7 +466,7 @@ const AboutMyThrift = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.1 }}
-          className="relative z-10 mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 md:gap-8"
+          className="relative z-10 mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 xl:grid-cols-3"
         >
           <motion.div
             onViewportEnter={() =>
@@ -573,7 +573,7 @@ const AboutMyThrift = () => {
               borderColor: "rgba(249,84,29,0.3)",
               boxShadow: "0 20px 40px rgba(0,0,0,0.05)",
             }}
-            className={`flex flex-col rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-500 md:mt-12 md:rounded-[2.5rem] md:p-8 ${visibleCards.card2 ? "is-visible" : ""}`}
+            className={`flex flex-col rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-500 md:rounded-[2.5rem] md:p-8 xl:mt-12 ${visibleCards.card2 ? "is-visible" : ""}`}
           >
             <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-customOrange/10 shadow-inner">
               <FontAwesomeIcon icon={faBolt} className="text-2xl text-customOrange" />
@@ -652,7 +652,7 @@ const AboutMyThrift = () => {
               borderColor: "rgba(249,84,29,0.3)",
               boxShadow: "0 20px 40px rgba(0,0,0,0.05)",
             }}
-            className={`flex flex-col rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-500 md:rounded-[2.5rem] md:p-8 ${visibleCards.card3 ? "is-visible" : ""}`}
+            className={`flex flex-col rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-500 md:col-span-2 md:mx-auto md:w-full md:max-w-[34rem] md:rounded-[2.5rem] md:p-8 xl:col-span-1 xl:max-w-none ${visibleCards.card3 ? "is-visible" : ""}`}
           >
             <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-customOrange/10 shadow-inner">
               <FontAwesomeIcon
