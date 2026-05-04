@@ -89,7 +89,7 @@ const AboutMyThrift = () => {
           scrollTrigger: {
             trigger: pinContainerRef.current,
             start: "top top",
-            end: isMobile ? "+=170%" : "+=200%",
+            end: isMobile ? "+=110%" : "+=200%",
             scrub: 1,
             pin: true,
             invalidateOnRefresh: true,
@@ -214,6 +214,44 @@ const AboutMyThrift = () => {
           0%, 100% { transform: translateY(0) rotateX(10deg) rotateY(-15deg); }
           50% { transform: translateY(-15px) rotateX(8deg) rotateY(-12deg); }
         }
+        @media (max-width: 767px) {
+          .howitw-pin {
+            min-height: auto;
+            justify-content: flex-start;
+          }
+          .howitw-grid {
+            grid-template-columns: minmax(0, 1fr) minmax(150px, 46%);
+            gap: 0.75rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+          }
+          .howitw-left,
+          .howitw-phone {
+            height: 64svh;
+            min-height: 430px;
+            max-height: 540px;
+          }
+          .howitw-phone {
+            width: 45vw;
+            min-width: 155px;
+            max-width: 190px;
+          }
+        }
+        @media (min-width: 390px) and (max-width: 767px) {
+          .howitw-grid {
+            grid-template-columns: minmax(0, 1fr) minmax(160px, 46%);
+            gap: 1rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+          }
+          .howitw-left,
+          .howitw-phone {
+            height: 66svh;
+          }
+          .howitw-phone {
+            width: 46vw;
+          }
+        }
 
         .is-visible .slash-line-premium {
           stroke-dasharray: 40;
@@ -268,10 +306,10 @@ const AboutMyThrift = () => {
 
         <div
           ref={pinContainerRef}
-          className="flex min-h-[100svh] w-full flex-col justify-center overflow-hidden border-t border-gray-100 bg-white"
+          className="howitw-pin flex min-h-[100svh] w-full flex-col justify-center overflow-hidden border-t border-gray-100 bg-white"
         >
-          <div className="mx-auto grid w-full max-w-5xl grid-cols-[minmax(0,1fr)_minmax(116px,38%)] items-center gap-3 px-4 py-8 min-[390px]:grid-cols-[minmax(0,1fr)_minmax(132px,38%)] min-[390px]:gap-4 sm:grid-cols-[minmax(0,1fr)_43%] sm:gap-5 sm:px-5 md:grid-cols-[minmax(0,0.9fr)_minmax(250px,1.1fr)] md:gap-8 md:px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(300px,1.15fr)]">
-            <div className="relative flex h-[300px] min-w-0 min-[390px]:h-[316px] sm:h-[460px] md:h-[440px] lg:h-[460px]">
+          <div className="howitw-grid mx-auto grid w-full max-w-5xl grid-cols-[minmax(0,1fr)_minmax(116px,38%)] items-center gap-3 px-4 py-8 min-[390px]:grid-cols-[minmax(0,1fr)_minmax(132px,38%)] min-[390px]:gap-4 sm:grid-cols-[minmax(0,1fr)_43%] sm:gap-5 sm:px-5 md:grid-cols-[minmax(0,0.9fr)_minmax(250px,1.1fr)] md:gap-8 md:px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(300px,1.15fr)]">
+            <div className="howitw-left relative flex h-[300px] min-w-0 min-[390px]:h-[316px] sm:h-[460px] md:h-[440px] lg:h-[460px]">
               <div className="absolute bottom-2 left-0 top-2 flex w-0 flex-col justify-between border-l-2 border-dashed border-orange-200">
                 <div ref={(el) => (dotsRef.current[0] = el)} className="rounded-full" />
                 <div ref={(el) => (dotsRef.current[1] = el)} className="rounded-full" />
@@ -384,7 +422,7 @@ const AboutMyThrift = () => {
             </div>
 
             <div className="flex min-w-0 justify-center">
-              <div className="relative h-[282px] w-[132px] overflow-hidden rounded-[1.55rem] border border-gray-200/80 bg-[#FCFCFD] shadow-[0_18px_40px_rgba(15,23,42,0.08),0_0_0_1px_rgba(15,23,42,0.03)] min-[390px]:h-[308px] min-[390px]:w-[144px] sm:h-[524px] sm:w-[244px] sm:rounded-[2.35rem] sm:border-[3px] sm:shadow-[0_34px_70px_rgba(15,23,42,0.12),0_0_0_1px_rgba(15,23,42,0.04)] md:h-[560px] md:w-[264px] md:rounded-[2.55rem] md:border-[3px] md:shadow-[0_32px_64px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.04)] lg:h-[660px] lg:w-[300px] lg:rounded-[3rem]">
+              <div className="howitw-phone relative h-[282px] w-[132px] overflow-hidden rounded-[1.55rem] border border-gray-200/80 bg-[#FCFCFD] shadow-[0_18px_40px_rgba(15,23,42,0.08),0_0_0_1px_rgba(15,23,42,0.03)] min-[390px]:h-[308px] min-[390px]:w-[144px] sm:h-[524px] sm:w-[244px] sm:rounded-[2.35rem] sm:border-[3px] sm:shadow-[0_34px_70px_rgba(15,23,42,0.12),0_0_0_1px_rgba(15,23,42,0.04)] md:h-[560px] md:w-[264px] md:rounded-[2.55rem] md:border-[3px] md:shadow-[0_32px_64px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.04)] lg:h-[660px] lg:w-[300px] lg:rounded-[3rem]">
                 <div className="absolute left-1/2 top-2.5 z-10 h-1 w-10 -translate-x-1/2 rounded-full bg-black/12 sm:top-4 sm:h-2 sm:w-16 lg:top-5 lg:w-20" />
                 <div
                   ref={(el) => (rightScreensRef.current[0] = el)}

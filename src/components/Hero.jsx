@@ -16,9 +16,9 @@ import Magnetic from "./Magnetic";
 const QLogo = ({ className = "" }) => (
   <div className={`flex items-center ${className}`}>
     <img
-      src="/ChatGPT_Image_May_1__2026__10_18_15_AM-removebg-preview.png"
+      src="/3-nav.png"
       alt="QPay Logo"
-      className="h-10 w-auto object-contain md:h-12"
+      className="block h-9 w-auto object-contain md:h-10"
     />
   </div>
 );
@@ -184,7 +184,7 @@ const Hero = () => {
       className="relative isolate overflow-hidden bg-customOrange text-white"
     >
       <div
-        className="pointer-events-none absolute inset-0 opacity-45"
+        className="pointer-events-none absolute inset-0 opacity-46"
         style={{
           backgroundImage:
             'url("/lean/ChatGPT Image Apr 24, 2026, 07_38_50 PM.png")',
@@ -193,11 +193,13 @@ const Hero = () => {
           backgroundRepeat: "no-repeat",
         }}
       />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_35%),linear-gradient(180deg,rgba(249,84,29,0.18),rgba(249,84,29,0.02))]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_35%),linear-gradient(180deg,rgba(249,84,29,0.14),rgba(249,84,29,0.02))]" />
 
       <nav className="relative z-30">
-        <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-4 pt-4 sm:px-6 sm:pt-6 md:px-[8vw]">
-          <QLogo className="ml-1" />
+        <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-4 py-4 sm:px-6 sm:py-5 md:px-[8vw]">
+          <div className="flex h-10 items-center md:h-11">
+            <QLogo className="ml-1 -translate-y-0.5" />
+          </div>
 
           <button
             aria-expanded={isMenuOpen}
@@ -208,13 +210,13 @@ const Hero = () => {
             <RiMenu3Line />
           </button>
 
-          <div className="hidden items-center sm:flex">
+          <div className="hidden h-10 items-center sm:flex md:h-11">
             <Magnetic>
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={openModal}
-                className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-customOrange shadow-sm transition-all duration-300 hover:bg-gray-100 hover:shadow-md"
+                className="h-10 rounded-full bg-white px-5 text-sm font-semibold leading-none text-customOrange shadow-sm transition-all duration-300 hover:bg-gray-100 hover:shadow-md md:h-11"
               >
                 Contact Us
               </motion.button>
@@ -297,8 +299,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="relative z-20 mx-auto grid min-h-[calc(100svh-4.5rem)] w-full max-w-[1440px] items-center gap-10 px-4 pt-10 pb-10 sm:px-6 md:min-h-[calc(100svh-5.5rem)] md:grid-cols-[minmax(0,1.08fr)_minmax(280px,0.82fr)] md:gap-8 md:px-[6vw] md:pt-10 md:pb-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.95fr)] lg:gap-12 lg:px-[8vw] lg:pt-12 lg:pb-14 xl:gap-16 xl:pt-14 xl:pb-16">
-        <div className="flex max-w-[40rem] flex-col justify-center md:max-w-[32rem] lg:max-w-[40rem]">
+      <div className="relative z-20 mx-auto grid min-h-[calc(100svh-4.5rem)] w-full max-w-[1440px] items-center gap-10 px-4 pt-10 pb-10 sm:px-6 md:min-h-[calc(100svh-5.5rem)] md:gap-8 md:px-[6vw] md:pt-10 md:pb-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.95fr)] lg:gap-12 lg:px-[8vw] lg:pt-12 lg:pb-14 xl:gap-16 xl:pt-14 xl:pb-16">
+        <div className="flex max-w-[40rem] flex-col justify-center md:max-w-[40rem] lg:max-w-[40rem]">
           <span
             data-hero="copy"
             className="mb-4 inline-flex w-fit rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80 sm:text-xs"
@@ -365,9 +367,9 @@ const Hero = () => {
 
         <div
           data-hero="visual"
-          className="relative flex items-center justify-center md:justify-end"
+          className="relative flex items-center justify-center lg:justify-end"
         >
-          <div className="relative w-full max-w-[27rem] sm:max-w-[31rem] md:max-w-[26rem] lg:max-w-[31rem] xl:max-w-[38rem]">
+          <div className="relative w-full max-w-[27rem] sm:max-w-[31rem] md:max-w-[34rem] lg:max-w-[31rem] xl:max-w-[38rem]">
             <div className="pointer-events-none absolute left-[4%] top-[10%] h-[22%] w-[22%] rounded-full bg-white/16 blur-3xl" />
             <div className="pointer-events-none absolute bottom-[6%] right-[2%] h-[26%] w-[26%] rounded-full bg-black/18 blur-3xl" />
 

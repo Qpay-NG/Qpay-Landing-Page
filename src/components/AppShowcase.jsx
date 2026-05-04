@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import screenSplash from "./images/screens/screen_splash.png";
 
@@ -27,8 +27,24 @@ const AppShowcase = () => {
   const stripRef = useRef(null);
   const marqueeRef = useRef(null);
   const pillTweenRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const syncViewport = () => setIsMobile(mediaQuery.matches);
+
+    syncViewport();
+    mediaQuery.addEventListener("change", syncViewport);
+
+    return () => mediaQuery.removeEventListener("change", syncViewport);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      if (pillTweenRef.current) pillTweenRef.current.kill();
+      return undefined;
+    }
+
     if (marqueeRef.current) {
       pillTweenRef.current = gsap.to(marqueeRef.current, {
         xPercent: -50,
@@ -63,7 +79,7 @@ const AppShowcase = () => {
       gsap.ticker.remove(tick);
       if (pillTweenRef.current) pillTweenRef.current.kill();
     };
-  }, []);
+  }, [isMobile]);
 
   const renderPhoneSet = (keyPrefix) => (
     <div className="flex flex-row items-end gap-5 px-3 sm:gap-6 sm:px-4 md:gap-8">
@@ -102,6 +118,9 @@ const AppShowcase = () => {
       className="relative overflow-x-hidden overflow-y-visible bg-customOrange pt-12 pb-10 md:pt-20 md:pb-[60px]"
       id="app-showcase"
     >
+      <style>{`
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+      `}</style>
       <div className="relative z-10 mb-16 w-full text-center">
         <div className="px-6">
           <h2 className="font-heading text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl">
@@ -134,9 +153,42 @@ const AppShowcase = () => {
       </div>
 
       <div className="relative w-full pb-8 md:pb-12">
-        <div ref={stripRef} className="flex w-max flex-row">
-          {renderPhoneSet("screen1")}
-          {renderPhoneSet("screen2")}
+        <div className="hide-scrollbar px-4 md:hidden overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="flex w-max snap-x snap-mandatory gap-4 pr-4">
+            {screens.map((screen, index) => (
+              <div
+                key={`mobile-screen-${index}`}
+                className="snap-center relative flex-shrink-0 w-[172px] h-[360px] min-[390px]:w-[190px] min-[390px]:h-[396px]"
+              >
+                <div
+                  className="relative h-full w-full overflow-hidden rounded-[2.1rem] border-[3px] border-white/20 bg-white"
+                  style={{
+                    boxShadow:
+                      "0 0 0 2px rgba(255,255,255,0.12), 0 18px 36px rgba(0,0,0,0.24)",
+                  }}
+                >
+                  <div className="absolute left-1/2 top-3 z-10 h-1.5 w-14 -translate-x-1/2 rounded-full bg-black/10" />
+                  <div className="absolute inset-[7px] overflow-hidden rounded-[1.7rem] bg-[#f8f8f8]">
+                    <img
+                      src={screen.src}
+                      alt={screen.label}
+                      className="block h-full w-full object-contain object-top"
+                    />
+                  </div>
+                </div>
+                <p className="mt-3 text-center text-sm font-medium text-white/75">
+                  {screen.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden md:block">
+          <div ref={stripRef} className="flex w-max flex-row">
+            {renderPhoneSet("screen1")}
+            {renderPhoneSet("screen2")}
+          </div>
         </div>
       </div>
     </section>

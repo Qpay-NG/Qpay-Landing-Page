@@ -1,36 +1,36 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 
 const Testimonials = () => {
   const statPills = [
     { text: "4,200+ active users" },
     { text: "Available in 12+ Nigerian cities" },
-    { text: "4.9 ★ average rating" },
+    { text: "4.9 \u2605 average rating" },
   ];
 
   const testimonials = [
     {
-      quote: "I sell fabrics at Tejuosho and network never cooperates. QPay changed everything — my customers just scan and we move on. No drama.",
+      quote: "I run a fabric stall in Tejuosho and bad network used to slow down every sale. With QPay, customers scan and pay offline in seconds. Checkout is faster and nobody gets stuck waiting.",
       name: "Funmi Adeyemi",
-      role: "Fabric Trader · Tejuosho Market, Lagos",
-      avatar: "https://i.pravatar.cc/100?img=47",
+      role: "Fabric Trader \u00B7 Tejuosho Market, Lagos",
+      avatar: "https://images.pexels.com/photos/20756309/pexels-photo-20756309.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=2",
       delay: 0,
       isHero: true,
       marginTop: "mt-0",
     },
     {
-      quote: "Sent money to my sister in Enugu during NEPA and no network. She got it instantly. I didn't even believe it worked.",
+      quote: "I paid a POS merchant during a blackout when there was no signal at all. We used QPay offline QR and it confirmed in seconds. Since then, I use it anytime regular transfers are hanging.",
       name: "Chidi Okafor",
-      role: "Student · University of Nigeria, Nsukka",
-      avatar: "https://i.pravatar.cc/100?img=12",
+      role: "Student \u00B7 University of Nigeria, Nsukka",
+      avatar: "https://images.pexels.com/photos/23801235/pexels-photo-23801235.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=2",
       delay: 0.15,
       isHero: false,
       marginTop: "md:mt-16",
     },
     {
-      quote: "As a dispatch rider I'm always in areas with no signal. QPay is the only app that doesn't frustrate me.",
+      quote: "As a dispatch rider, I deliver in places where signal drops all the time. QPay lets customers pay me right there offline. I complete more deliveries without the usual payment back and forth.",
       name: "Segun Balogun",
-      role: "Dispatch Rider · Ibadan",
-      avatar: "https://i.pravatar.cc/100?img=33",
+      role: "Dispatch Rider \u00B7 Ibadan",
+      avatar: "https://images.pexels.com/photos/17612326/pexels-photo-17612326.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=2",
       delay: 0.3,
       isHero: false,
       marginTop: "md:mt-8",
@@ -98,7 +98,7 @@ const Testimonials = () => {
 
               {/* Star rating row */}
               <div className="text-customOrange text-sm mb-5 flex gap-0.5 relative z-10">
-                ★★★★★
+                {"\u2605\u2605\u2605\u2605\u2605"}
               </div>
 
               {/* Quote text */}
@@ -141,3 +141,5 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
+

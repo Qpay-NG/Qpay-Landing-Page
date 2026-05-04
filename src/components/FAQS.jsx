@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const FAQs = () => {
@@ -12,12 +12,12 @@ const FAQs = () => {
     {
       icon: "fa-circle-info",
       question: "What is QPay?",
-      answer: "QPay is a payment app that lets you send and receive money with zero internet. You generate a QR code on your phone — no signal needed — and the merchant scans it. Done.",
+      answer: "QPay is a payment app that lets you send and receive money with zero internet. You generate a QR code on your phone, no signal needed, and the merchant scans it. Done.",
     },
     {
       icon: "fa-qrcode",
       question: "How does the offline QR code work?",
-      answer: "You open QPay, enter the amount, and your phone creates a secure QR code instantly — all on-device. The merchant scans it with their QPay app, and the payment confirms in seconds. Neither of you needs internet at any point.",
+      answer: "You open QPay, enter the amount, and your phone creates a secure QR code instantly, all on device. The merchant scans it with their QPay app, and the payment confirms in seconds. Neither of you needs internet at any point.",
     },
     {
       icon: "fa-shield-halved",
@@ -32,7 +32,7 @@ const FAQs = () => {
     {
       icon: "fa-gauge-high",
       question: "Is there a limit to offline payments?",
-      answer: "Offline QR codes have a temporary limit for security — this resets automatically the next time your phone connects to internet. Your transaction history and balance sync instantly when you're back online.",
+      answer: "Offline QR codes have a temporary limit for security. This resets automatically the next time your phone connects to internet. Your transaction history and balance sync instantly when you're back online.",
     }
   ];
 
@@ -128,7 +128,7 @@ const FAQs = () => {
             >
               <i className="fa-solid fa-circle-question text-white/50 text-4xl mb-4"></i>
               <h3 className="text-white font-bold text-lg">Still have questions?</h3>
-              <p className="text-white/70 text-sm mb-6">Reach out — we reply fast.</p>
+              <p className="text-white/70 text-sm mb-6">Reach out, we reply fast.</p>
               <button className="bg-white text-customOrange font-semibold px-6 py-3 rounded-full text-sm hover:bg-orange-50 transition-colors">
                 Contact Us
               </button>
@@ -141,3 +141,5 @@ const FAQs = () => {
 };
 
 export default FAQs;
+
+
