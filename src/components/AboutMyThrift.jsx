@@ -56,7 +56,7 @@ const AboutMyThrift = () => {
         },
         (context) => {
           const { isMobile } = context.conditions;
-          const scrubAmount = isMobile ? 0.2 : 1;
+          const scrubAmount = isMobile ? 0.55 : 1;
           const stepEase = isMobile ? "none" : "power2.out";
           const screenEase = isMobile ? "none" : "power2.inOut";
 
@@ -92,8 +92,16 @@ const AboutMyThrift = () => {
           scrollTrigger: {
             trigger: pinContainerRef.current,
             start: "top top",
-            end: isMobile ? "+=110%" : "+=200%",
+            end: isMobile ? "+=260%" : "+=200%",
             scrub: scrubAmount,
+            snap: isMobile
+              ? {
+                  snapTo: "labelsDirectional",
+                  duration: { min: 0.15, max: 0.35 },
+                  delay: 0.05,
+                  ease: "power1.inOut",
+                }
+              : false,
             pin: true,
             anticipatePin: isMobile ? 1 : 0,
             fastScrollEnd: true,
@@ -101,7 +109,8 @@ const AboutMyThrift = () => {
           },
         });
 
-        tl.to(
+        tl.addLabel("step1", 0)
+          .to(
           leftTextRef.current[0],
           { y: -30, opacity: 0, duration: 0.3, ease: stepEase },
           0.1
@@ -145,6 +154,7 @@ const AboutMyThrift = () => {
             },
             0.5
           )
+          .addLabel("step2", 1)
           .to(
             leftTextRef.current[1],
             { y: -30, opacity: 0, duration: 0.3, ease: stepEase },
@@ -188,7 +198,8 @@ const AboutMyThrift = () => {
               duration: 0.3,
             },
             1.5
-          );
+          )
+          .addLabel("step3", 2);
 
         return () => {
           tl.scrollTrigger?.kill();

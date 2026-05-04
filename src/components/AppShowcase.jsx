@@ -30,17 +30,19 @@ const AppShowcase = () => {
   const stripTickerRef = useRef(null);
 
   useEffect(() => {
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
     if (marqueeRef.current) {
       pillTweenRef.current = gsap.to(marqueeRef.current, {
         xPercent: -50,
-        duration: 30,
+        duration: isMobile ? 20 : 16,
         ease: "none",
         repeat: -1,
       });
     }
 
     let xPos = 0;
-    const speed = 1.2;
+    const speed = isMobile ? 0.95 : 1.35;
     const strip = stripRef.current;
     let halfWidth = 0;
 
@@ -70,11 +72,11 @@ const AppShowcase = () => {
   }, []);
 
   const renderPhoneSet = (keyPrefix) => (
-    <div className="flex flex-row items-end gap-5 px-3 sm:gap-6 sm:px-4 md:gap-8">
+    <div className="flex flex-row items-end gap-3 sm:gap-6 md:gap-8">
       {screens.map((screen, index) => (
         <div
           key={`${keyPrefix}-${index}`}
-          className="relative flex-shrink-0 w-[132px] h-[280px] min-[400px]:w-[148px] min-[400px]:h-[312px] sm:w-[190px] sm:h-[400px] md:w-[220px] md:h-[460px]"
+          className="relative h-[132vw] w-[62vw] max-h-[520px] max-w-[248px] flex-shrink-0 min-[400px]:h-[124vw] min-[400px]:w-[58vw] sm:h-[400px] sm:w-[190px] md:h-[460px] md:w-[220px]"
         >
           <div
             className="relative w-full h-full rounded-[2.5rem] border-[3px] border-white/20 overflow-hidden bg-white"
@@ -122,11 +124,11 @@ const AppShowcase = () => {
         <div className="relative mt-6 w-full overflow-hidden md:mt-10">
           <div ref={marqueeRef} className="flex w-max flex-row">
             {[...Array(10)].map((_, setIndex) => (
-              <div key={`pill-set-${setIndex}`} className="flex gap-4 px-2">
+              <div key={`pill-set-${setIndex}`} className="flex gap-4 px-3 md:px-2">
                 {pills.map((pill, index) => (
                   <span
                     key={`pill-${setIndex}-${index}`}
-                    className="flex-shrink-0 whitespace-nowrap rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-800 md:px-4 md:py-2 md:text-sm"
+                    className="flex-shrink-0 whitespace-nowrap rounded-full border border-gray-200 bg-white px-5 py-2 text-sm font-medium text-gray-800 md:px-4 md:py-2 md:text-sm"
                   >
                     {pill}
                   </span>
@@ -137,8 +139,8 @@ const AppShowcase = () => {
         </div>
       </div>
 
-      <div className="relative w-full pb-8 md:pb-12">
-        <div ref={stripRef} className="flex w-max flex-row">
+      <div className="relative w-full px-[12vw] pb-8 sm:px-0 md:pb-12">
+        <div ref={stripRef} className="flex w-max flex-row gap-3 sm:gap-6 md:gap-8">
           {renderPhoneSet("screen1")}
           {renderPhoneSet("screen2")}
         </div>
