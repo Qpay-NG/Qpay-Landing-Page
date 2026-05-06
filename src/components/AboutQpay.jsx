@@ -8,10 +8,23 @@ import {
   faBolt,
   faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
+import OptimizedPicture from "./OptimizedPicture";
 
-const screenStep1 = "/screen2.jpg";
-const screenStep2 = "/screen33.jpg";
-const screenStep3 = "/screen_1.jpg";
+const screenStep1 = {
+  src: "/screen2.jpg",
+  avif: "/optimized/screen-enter-amount.avif",
+  webp: "/optimized/screen-enter-amount.webp",
+};
+const screenStep2 = {
+  src: "/screen33.jpg",
+  avif: "/optimized/screen-merchant-qr.avif",
+  webp: "/optimized/screen-merchant-qr.webp",
+};
+const screenStep3 = {
+  src: "/screen_1.jpg",
+  avif: "/optimized/screen-payment-confirmed.avif",
+  webp: "/optimized/screen-payment-confirmed.webp",
+};
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -564,36 +577,42 @@ const AboutQpay = () => {
                   ref={(el) => (rightScreensRef.current[0] = el)}
                   className="absolute inset-[7px] h-auto w-auto overflow-hidden rounded-[1.4rem] bg-white sm:inset-[8px] sm:rounded-[1.5rem] md:inset-[10px] md:rounded-[1.8rem] lg:inset-[12px] lg:rounded-[2.4rem]"
                 >
-                  <img
-                    src={screenStep1}
+                  <OptimizedPicture
+                    avif={screenStep1.avif}
+                    webp={screenStep1.webp}
+                    src={screenStep1.src}
                     alt="Enter Amount Screen"
                     loading="lazy"
                     decoding="async"
-                    className="block h-full w-full object-contain object-top"
+                    imgClassName="block h-full w-full object-contain object-top"
                   />
                 </div>
                 <div
                   ref={(el) => (rightScreensRef.current[1] = el)}
                   className="absolute inset-[7px] h-auto w-auto overflow-hidden rounded-[1.4rem] bg-white sm:inset-[8px] sm:rounded-[1.5rem] md:inset-[10px] md:rounded-[1.8rem] lg:inset-[12px] lg:rounded-[2.4rem]"
                 >
-                  <img
-                    src={screenStep2}
+                  <OptimizedPicture
+                    avif={screenStep2.avif}
+                    webp={screenStep2.webp}
+                    src={screenStep2.src}
                     alt="Merchant QR Screen"
                     loading="lazy"
                     decoding="async"
-                    className="block h-full w-full object-contain object-top"
+                    imgClassName="block h-full w-full object-contain object-top"
                   />
                 </div>
                 <div
                   ref={(el) => (rightScreensRef.current[2] = el)}
                   className="absolute inset-[7px] h-auto w-auto overflow-hidden rounded-[1.4rem] bg-white sm:inset-[8px] sm:rounded-[1.5rem] md:inset-[10px] md:rounded-[1.8rem] lg:inset-[12px] lg:rounded-[2.4rem]"
                 >
-                  <img
-                    src={screenStep3}
+                  <OptimizedPicture
+                    avif={screenStep3.avif}
+                    webp={screenStep3.webp}
+                    src={screenStep3.src}
                     alt="Payment Confirmed Screen"
                     loading="lazy"
                     decoding="async"
-                    className="block h-full w-full object-contain object-top"
+                    imgClassName="block h-full w-full object-contain object-top"
                   />
                 </div>
               </div>

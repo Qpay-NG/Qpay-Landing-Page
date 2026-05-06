@@ -13,11 +13,20 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
 import Magnetic from "./Magnetic";
+import OptimizedPicture from "./OptimizedPicture";
 import { CONTACT_MODAL_EVENT } from "../utils/contactModal";
 
 const CONTACT_API_URL =
   "https://landingpageqpay.mythriftpayments.cc/api/v1/contact";
 const CONTACT_API_KEY = import.meta.env.VITE_QPAY_CONTACT_API_KEY;
+
+const heroImage = {
+  avif:
+    "/optimized/hero-qpay-users-640.avif 640w, /optimized/hero-qpay-users-960.avif 960w, /optimized/hero-qpay-users-1280.avif 1280w",
+  webp:
+    "/optimized/hero-qpay-users-640.webp 640w, /optimized/hero-qpay-users-960.webp 960w, /optimized/hero-qpay-users-1280.webp 1280w",
+  sizes: "(max-width: 640px) 92vw, (max-width: 1024px) 31rem, 34rem",
+};
 
 const QLogo = ({ className = "" }) => (
   <div className={`flex items-center ${className}`}>
@@ -255,7 +264,7 @@ const Hero = () => {
         className="pointer-events-none absolute inset-0 opacity-46"
         style={{
           backgroundImage:
-            'url("/lean/ChatGPT Image Apr 24, 2026, 07_38_50 PM.png")',
+            "image-set(url('/optimized/hero-bg-1772.avif') type('image/avif'), url('/optimized/hero-bg-1772.webp') type('image/webp'), url('/lean/ChatGPT Image Apr 24, 2026, 07_38_50 PM.png') type('image/png'))",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -443,8 +452,16 @@ const Hero = () => {
 
             <div className="relative overflow-hidden rounded-[2rem] border border-white/14 bg-white/10 px-3 pt-3 pb-0 shadow-[0_28px_80px_rgba(0,0,0,0.22)] backdrop-blur-[6px] sm:rounded-[2.5rem] sm:px-4 sm:pt-4 sm:pb-0 md:rounded-[2.35rem] md:px-3 md:pt-3 md:pb-0 lg:rounded-[2.75rem] xl:rounded-[3rem]">
               <div className="rounded-[1.6rem] bg-gradient-to-b from-white/8 to-black/10 px-2 pt-2 pb-0 sm:rounded-[2rem] sm:px-3 sm:pt-3 sm:pb-0 md:rounded-[1.75rem] md:px-2.5 md:pt-2.5 md:pb-0 lg:rounded-[2rem]">
-                <div className="relative overflow-hidden rounded-[1.4rem] bg-white/5 sm:rounded-[1.8rem] md:rounded-[1.55rem] lg:rounded-[1.8rem]">
-                  <img
+                <div
+                  className="relative overflow-hidden rounded-[1.4rem] bg-white/5 bg-contain bg-center bg-no-repeat sm:rounded-[1.8rem] md:rounded-[1.55rem] lg:rounded-[1.8rem]"
+                  style={{
+                    backgroundImage:
+                      "url('/optimized/hero-qpay-users-blur.webp')",
+                  }}
+                >
+                  <OptimizedPicture
+                    avif={heroImage.avif}
+                    webp={heroImage.webp}
                     src="/hero-qpay-users.png"
                     alt="QPay Offline Payment UI"
                     width="1842"
@@ -452,7 +469,8 @@ const Hero = () => {
                     loading="eager"
                     decoding="async"
                     fetchPriority="high"
-                    className="mx-auto block h-auto max-h-[none] w-auto max-w-full object-contain lg:max-h-[calc(100svh-14rem)] xl:max-h-[calc(100svh-13rem)]"
+                    sizes={heroImage.sizes}
+                    imgClassName="mx-auto block h-auto max-h-[none] w-auto max-w-full object-contain lg:max-h-[calc(100svh-14rem)] xl:max-h-[calc(100svh-13rem)]"
                   />
                 </div>
               </div>

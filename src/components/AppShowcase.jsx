@@ -1,18 +1,41 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import screenSplash from "./images/screens/screen_splash.png";
+import OptimizedPicture from "./OptimizedPicture";
 
-const screenStep1 = "/screen2.jpg";
-const screenStep2 = "/screen33.jpg";
-const screenStep3 = "/screen_1.jpg";
+const screenStep1 = {
+  src: "/screen2.jpg",
+  avif: "/optimized/screen-enter-amount.avif",
+  webp: "/optimized/screen-enter-amount.webp",
+};
+const screenStep2 = {
+  src: "/screen33.jpg",
+  avif: "/optimized/screen-merchant-qr.avif",
+  webp: "/optimized/screen-merchant-qr.webp",
+};
+const screenStep3 = {
+  src: "/screen_1.jpg",
+  avif: "/optimized/screen-payment-confirmed.avif",
+  webp: "/optimized/screen-payment-confirmed.webp",
+};
 
 const screens = [
   { src: screenSplash, label: "Onboarding" },
-  { src: "/lean/Hidden balance.png", label: "Dashboard" },
-  { src: screenStep1, label: "Enter Amount" },
-  { src: screenStep2, label: "Merchant QR" },
-  { src: screenStep3, label: "Payment Confirmed" },
-  { src: "/lean/Default1.png", label: "Merchant Dashboard" },
+  {
+    src: "/lean/Hidden balance.png",
+    avif: "/optimized/screen-hidden-balance.avif",
+    webp: "/optimized/screen-hidden-balance.webp",
+    label: "Dashboard",
+  },
+  { ...screenStep1, label: "Enter Amount" },
+  { ...screenStep2, label: "Merchant QR" },
+  { ...screenStep3, label: "Payment Confirmed" },
+  {
+    src: "/lean/Default1.png",
+    avif: "/optimized/screen-merchant-dashboard.avif",
+    webp: "/optimized/screen-merchant-dashboard.webp",
+    label: "Merchant Dashboard",
+  },
 ];
 
 const pills = [
@@ -87,13 +110,25 @@ const AppShowcase = () => {
           >
             <div className="absolute left-1/2 top-2 z-10 h-1 w-10 -translate-x-1/2 rounded-full bg-black/10 sm:top-4 sm:h-2 sm:w-16" />
             <div className="absolute inset-[5px] overflow-hidden rounded-[1.35rem] bg-[#f8f8f8] min-[430px]:rounded-[1.6rem] sm:inset-[8px] sm:rounded-[2rem] md:inset-[10px]">
-              <img
-                src={screen.src}
-                alt={screen.label}
-                loading="lazy"
-                decoding="async"
-                className="block h-full w-full object-contain object-top"
-              />
+              {screen.avif || screen.webp ? (
+                <OptimizedPicture
+                  avif={screen.avif}
+                  webp={screen.webp}
+                  src={screen.src}
+                  alt={screen.label}
+                  loading="lazy"
+                  decoding="async"
+                  imgClassName="block h-full w-full object-contain object-top"
+                />
+              ) : (
+                <img
+                  src={screen.src}
+                  alt={screen.label}
+                  loading="lazy"
+                  decoding="async"
+                  className="block h-full w-full object-contain object-top"
+                />
+              )}
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import appStore from "./images/apple ssooo.png";
 import googlePlay from "./images/google s.png";
+import OptimizedPicture from "./OptimizedPicture";
 
 const cardFrame =
   "absolute overflow-hidden border border-black/5 bg-white/95 shadow-[0_20px_60px_rgba(0,0,0,0.10)]";
@@ -112,7 +113,9 @@ const ComingSoonSection = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className={`${cardFrame} left-0 top-[48px] z-[1] w-[38%] rounded-[22px] sm:top-[52px] sm:rounded-[24px] md:top-[58px] md:rounded-[26px] lg:top-[40px] lg:rounded-[28px]`}
         >
-          <img
+          <OptimizedPicture
+            avif="/optimized/screen-hidden-balance.avif"
+            webp="/optimized/screen-hidden-balance.webp"
             src="/lean/Hidden balance.png"
             alt="Dashboard"
             loading="lazy"
@@ -146,7 +149,9 @@ const ComingSoonSection = () => {
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <img
+              <OptimizedPicture
+                avif="/optimized/screen-qr.avif"
+                webp="/optimized/screen-qr.webp"
                 src="/lean/photo_2026-05-02_02-06-16.jpg"
                 alt="QR Screen"
                 loading="lazy"
@@ -189,7 +194,9 @@ const ComingSoonSection = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className={`${cardFrame} right-0 top-[64px] z-[2] w-[38%] rounded-[22px] sm:top-[70px] sm:rounded-[24px] md:top-[76px] md:rounded-[26px] lg:top-[60px] lg:rounded-[28px]`}
         >
-          <img
+          <OptimizedPicture
+            avif="/optimized/screen-merchant-dashboard.avif"
+            webp="/optimized/screen-merchant-dashboard.webp"
             src="/lean/Default1.png"
             alt="Merchant Dashboard"
             loading="lazy"
