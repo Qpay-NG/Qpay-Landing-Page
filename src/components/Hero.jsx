@@ -340,14 +340,14 @@ const Hero = () => {
 
           <div className="flex justify-center space-x-8 pb-2">
             <a
-              href="https://www.instagram.com/mythriftng?igsh=MTFzM2tkMXp2Z2RpYg=="
+              href="https://www.instagram.com/qpay"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faInstagram} size="lg" />
             </a>
             <a
-              href="https://x.com/mythriftng"
+              href="https://x.com/qpay"
               target="_blank"
               rel="noopener noreferrer"
             >

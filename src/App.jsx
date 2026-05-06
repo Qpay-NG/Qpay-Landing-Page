@@ -1,6 +1,6 @@
 import './App.css'
 import Hero from './components/Hero'
-import AboutMyThrift from './components/AboutMyThrift'
+import AboutQpay from './components/AboutQpay'
 import ComingSoonSection from './components/ComingSoonSection'
 import FAQs from './components/FAQS'
 import AppShowcase from './components/AppShowcase'
@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Hero />
-      <AboutMyThrift />
+      <AboutQpay />
       <Testimonials />
       <AppShowcase />
       <ComingSoonSection />

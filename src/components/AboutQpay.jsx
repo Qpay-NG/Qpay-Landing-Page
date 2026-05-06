@@ -15,7 +15,7 @@ const screenStep3 = "/screen_1.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AboutMyThrift = () => {
+const AboutQpay = () => {
   const [visibleCards, setVisibleCards] = useState({
     card1: false,
     card2: false,
@@ -922,4 +922,4 @@ const AboutMyThrift = () => {
   );
 };
 
-export default AboutMyThrift;
+export default AboutQpay;
