@@ -115,6 +115,8 @@ const Testimonials = () => {
                   viewport={{ once: true }}
                   src={item.avatar}
                   alt={item.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-12 h-12 rounded-full object-cover border-2 border-orange-100"
                 />
                 <div className="flex flex-col">
@@ -141,5 +143,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-
 

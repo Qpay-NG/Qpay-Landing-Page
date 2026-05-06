@@ -90,6 +90,8 @@ const AppShowcase = () => {
               <img
                 src={screen.src}
                 alt={screen.label}
+                loading="lazy"
+                decoding="async"
                 className="block h-full w-full object-contain object-top"
               />
             </div>

@@ -24,6 +24,9 @@ const QLogo = ({ className = "" }) => (
     <img
       src="/3-nav.png"
       alt="QPay Logo"
+      width="144"
+      height="40"
+      decoding="async"
       className="block h-9 w-auto object-contain md:h-10"
     />
   </div>
@@ -444,6 +447,11 @@ const Hero = () => {
                   <img
                     src="/hero-qpay-users.png"
                     alt="QPay Offline Payment UI"
+                    width="1842"
+                    height="2304"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
                     className="mx-auto block h-auto max-h-[none] w-auto max-w-full object-contain lg:max-h-[calc(100svh-14rem)] xl:max-h-[calc(100svh-13rem)]"
                   />
                 </div>

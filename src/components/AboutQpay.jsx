@@ -567,6 +567,8 @@ const AboutQpay = () => {
                   <img
                     src={screenStep1}
                     alt="Enter Amount Screen"
+                    loading="lazy"
+                    decoding="async"
                     className="block h-full w-full object-contain object-top"
                   />
                 </div>
@@ -577,6 +579,8 @@ const AboutQpay = () => {
                   <img
                     src={screenStep2}
                     alt="Merchant QR Screen"
+                    loading="lazy"
+                    decoding="async"
                     className="block h-full w-full object-contain object-top"
                   />
                 </div>
@@ -587,6 +591,8 @@ const AboutQpay = () => {
                   <img
                     src={screenStep3}
                     alt="Payment Confirmed Screen"
+                    loading="lazy"
+                    decoding="async"
                     className="block h-full w-full object-contain object-top"
                   />
                 </div>

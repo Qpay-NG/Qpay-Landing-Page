@@ -61,6 +61,8 @@ const ComingSoonSection = () => {
             <img
               src={googlePlay}
               alt="Get it on Google Play"
+              loading="lazy"
+              decoding="async"
               className="h-12 w-auto md:h-14"
             />
           </button>
@@ -72,6 +74,8 @@ const ComingSoonSection = () => {
             <img
               src={appStore}
               alt="Download on the App Store"
+              loading="lazy"
+              decoding="async"
               className="h-12 w-auto md:h-14"
             />
           </button>
@@ -111,6 +115,8 @@ const ComingSoonSection = () => {
           <img
             src="/lean/Hidden balance.png"
             alt="Dashboard"
+            loading="lazy"
+            decoding="async"
             style={{
               width: "100%",
               height: "auto",
@@ -143,6 +149,8 @@ const ComingSoonSection = () => {
               <img
                 src="/lean/photo_2026-05-02_02-06-16.jpg"
                 alt="QR Screen"
+                loading="lazy"
+                decoding="async"
                 style={{
                   width: "100%",
                   height: "auto",
@@ -184,6 +192,8 @@ const ComingSoonSection = () => {
           <img
             src="/lean/Default1.png"
             alt="Merchant Dashboard"
+            loading="lazy"
+            decoding="async"
             style={{
               width: "100%",
               height: "auto",
