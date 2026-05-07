@@ -652,36 +652,12 @@ const AboutQpay = () => {
         </motion.div>
 
         <motion.div
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.1,
-              },
-            },
-          }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.1 }}
           className="relative z-10 mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 xl:grid-cols-3"
         >
           <motion.div
             onViewportEnter={() =>
               setVisibleCards((prev) => ({ ...prev, card1: true }))
             }
-            onViewportLeave={() =>
-              setVisibleCards((prev) => ({ ...prev, card1: false }))
-            }
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.6, ease: "easeOut" },
-              },
-            }}
             whileHover={{
               y: -10,
               borderColor: "rgba(249,84,29,0.3)",
@@ -756,17 +732,6 @@ const AboutQpay = () => {
             onViewportEnter={() =>
               setVisibleCards((prev) => ({ ...prev, card2: true }))
             }
-            onViewportLeave={() =>
-              setVisibleCards((prev) => ({ ...prev, card2: false }))
-            }
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.6, ease: "easeOut" },
-              },
-            }}
             whileHover={{
               y: -10,
               borderColor: "rgba(249,84,29,0.3)",
@@ -835,17 +800,6 @@ const AboutQpay = () => {
             onViewportEnter={() =>
               setVisibleCards((prev) => ({ ...prev, card3: true }))
             }
-            onViewportLeave={() =>
-              setVisibleCards((prev) => ({ ...prev, card3: false }))
-            }
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.6, ease: "easeOut" },
-              },
-            }}
             whileHover={{
               y: -10,
               borderColor: "rgba(249,84,29,0.3)",

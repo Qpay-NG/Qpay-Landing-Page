@@ -46,7 +46,7 @@ const Testimonials = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           className="mb-12"
         >
           <p className="text-customOrange text-xs font-semibold tracking-widest uppercase text-center mb-3">
@@ -65,7 +65,7 @@ const Testimonials = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.35 }}
               className="bg-gray-50 border border-gray-100 rounded-full px-3 sm:px-5 py-2 sm:py-2.5 flex items-center gap-2"
             >
               <div className="w-2 h-2 rounded-full bg-customOrange animate-pulse" />
@@ -82,7 +82,7 @@ const Testimonials = () => {
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: item.delay, ease: "easeOut" }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               whileHover={{ y: -10, boxShadow: "0 30px 60px rgba(249,84,29,0.15)" }}
               className={`group flex flex-col bg-white rounded-2xl md:rounded-[2.5rem] p-6 md:p-8 relative overflow-hidden transition-all duration-500 ${item.marginTop} ${
                 item.isHero 
@@ -112,7 +112,7 @@ const Testimonials = () => {
                   initial={{ scale: 0, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.4, delay: item.delay + 0.3 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.4 }}
                   src={item.avatar}
                   alt={item.name}
                   loading="lazy"
@@ -143,4 +143,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-
