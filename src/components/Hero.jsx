@@ -7,9 +7,8 @@ import { RotatingLines } from "react-loader-spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
-  faTwitter,
-  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import Magnetic from "./Magnetic";
 import OptimizedPicture from "./OptimizedPicture";
@@ -361,25 +360,17 @@ const Hero = () => {
 
           <div className="flex justify-center space-x-8 pb-2">
             <a
-              href="https://www.instagram.com/qpay"
+              href="https://www.instagram.com/qpayng_/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faInstagram} size="lg" />
             </a>
             <a
-              href="https://x.com/qpay"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:support@qpay-ng.com"
+              aria-label="Email QPay support"
             >
-              <FontAwesomeIcon icon={faTwitter} size="lg" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faLinkedin} size="lg" />
+              <FontAwesomeIcon icon={faEnvelope} size="lg" />
             </a>
           </div>
         </div>

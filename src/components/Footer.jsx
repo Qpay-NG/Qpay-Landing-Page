@@ -1,24 +1,35 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="bg-black text-white py-4 px-4 sm:px-6 md:px-12 lg:px-12 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0">
-        <p className="text-[10px] sm:text-xs md:text-sm text-center sm:text-left">&copy; 2026 QPay. Pay Anywhere. Even Offline.</p>
-        <div className="flex space-x-6 sm:mr-6">
-          <a href="https://www.instagram.com/qpay" target="_blank" rel="noopener noreferrer">
+    <footer className="border-t border-white/10 bg-[#26282d] text-white">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-4 px-6 py-5 sm:flex-row sm:items-center sm:justify-between md:px-12">
+        <p className="text-center text-sm text-white/90 sm:text-left">
+          &copy; 2026 QPay. All rights reserved.
+        </p>
+
+        <div className="flex items-center justify-center gap-6 sm:justify-end">
+          <a
+            href="https://www.instagram.com/qpayng_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="QPay Instagram"
+            className="text-white transition-colors duration-200 hover:text-white/70"
+          >
             <FontAwesomeIcon icon={faInstagram} size="lg" />
           </a>
-          <a href="https://x.com/qpay" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faTwitter} size="lg" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faLinkedin} size="lg" />
+          <a
+            href="mailto:support@qpay-ng.com"
+            aria-label="Email QPay support"
+            className="text-white transition-colors duration-200 hover:text-white/70"
+          >
+            <FontAwesomeIcon icon={faEnvelope} size="lg" />
           </a>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 };
 

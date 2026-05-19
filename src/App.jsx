@@ -5,6 +5,7 @@ import ComingSoonSection from './components/ComingSoonSection'
 import FAQs from './components/FAQS'
 import AppShowcase from './components/AppShowcase'
 import Testimonials from './components/Testimonials'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <AppShowcase />
       <ComingSoonSection />
       <FAQs />
+      <Footer />
     </div>
   )
 }
