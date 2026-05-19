@@ -3,7 +3,6 @@ import { createPortal } from "react-dom";
 import { gsap } from "gsap";
 import { FiX } from "react-icons/fi";
 import { RiMenu3Line } from "react-icons/ri";
-import toast, { Toaster } from "react-hot-toast";
 import { RotatingLines } from "react-loader-spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -50,6 +49,7 @@ const Hero = () => {
   const [modalNotice, setModalNotice] = useState({
     message: "",
     isVisible: false,
+    type: "error",
   });
 
   const heroRef = useRef(null);
@@ -116,7 +116,7 @@ const Hero = () => {
       clearTimeout(modalNoticeTimerRef.current);
     }
 
-    setModalNotice({ message, isVisible: true });
+    setModalNotice({ message, isVisible: true, type: "error" });
 
     modalNoticeTimerRef.current = setTimeout(() => {
       setModalNotice((currentNotice) => ({
@@ -125,9 +125,23 @@ const Hero = () => {
       }));
 
       modalNoticeTimerRef.current = setTimeout(() => {
-        setModalNotice({ message: "", isVisible: false });
+        setModalNotice({ message: "", isVisible: false, type: "error" });
       }, 260);
     }, 2600);
+  };
+
+  const showModalSuccess = (message) => {
+    if (modalNoticeTimerRef.current) {
+      clearTimeout(modalNoticeTimerRef.current);
+    }
+
+    setModalNotice({ message, isVisible: true, type: "success" });
+
+    modalNoticeTimerRef.current = setTimeout(() => {
+      closeModal();
+      setEmail("");
+      setMessage("");
+    }, 1300);
   };
 
   const openModal = () => {
@@ -147,7 +161,7 @@ const Hero = () => {
       clearTimeout(modalNoticeTimerRef.current);
       modalNoticeTimerRef.current = null;
     }
-    setModalNotice({ message: "", isVisible: false });
+    setModalNotice({ message: "", isVisible: false, type: "error" });
 
     if (!modalRef.current) {
       setIsModalOpen(false);
@@ -221,12 +235,7 @@ const Hero = () => {
       const data = await response.json().catch(() => ({}));
 
       if (response.ok) {
-        toast.success(data.message || "Question submitted successfully.", {
-          id: "contact-form-success",
-        });
-        closeModal();
-        setEmail("");
-        setMessage("");
+        showModalSuccess(data.message || "Question submitted successfully.");
       } else {
         showModalError(data.message || "Failed to send message.");
       }
@@ -508,7 +517,11 @@ const Hero = () => {
             <div
               role="alert"
               aria-live="polite"
-              className={`pointer-events-none absolute left-1/2 top-4 z-30 w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 rounded-2xl border border-red-100 bg-white/95 px-4 py-3 text-center text-sm font-semibold text-red-600 shadow-[0_18px_48px_rgba(15,23,42,0.22)] backdrop-blur-md transition-all duration-300 ease-out ${
+              className={`pointer-events-none absolute left-1/2 top-4 z-30 w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 rounded-2xl border bg-white/95 px-4 py-3 text-center text-sm font-semibold shadow-[0_18px_48px_rgba(15,23,42,0.22)] backdrop-blur-md transition-all duration-300 ease-out ${
+                modalNotice.type === "success"
+                  ? "border-emerald-100 text-emerald-600"
+                  : "border-red-100 text-red-600"
+              } ${
                 modalNotice.message && modalNotice.isVisible
                   ? "translate-y-0 opacity-100"
                   : "-translate-y-2 opacity-0"
@@ -587,7 +600,6 @@ const Hero = () => {
         document.body
       )}
 
-      <Toaster position="top-center" />
     </section>
   );
 };

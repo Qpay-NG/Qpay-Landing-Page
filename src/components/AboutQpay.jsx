@@ -747,8 +747,7 @@ const AboutQpay = () => {
             </h3>
             <p className="font-body mb-6 flex-grow text-sm font-medium leading-relaxed text-gray-500 md:mb-8 md:text-base">
               Scan and it&apos;s confirmed. No spinning wheel, no transaction
-              processing, no staring at your screen. QPay confirms in under 3
-              seconds. Every time.
+              processing, no staring at your screen. QPay confirms and that's it.
             </p>
             <div className="group relative mt-4 flex min-h-[180px] flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500 via-customOrange to-orange-600 p-5 shadow-2xl md:min-h-[200px] md:p-8">
               <div className="pointer-events-none absolute inset-0 opacity-20">
