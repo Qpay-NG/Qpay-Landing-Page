@@ -6,16 +6,26 @@ import FAQs from './components/FAQS'
 import AppShowcase from './components/AppShowcase'
 import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
+import CookiesPolicyPage from './components/CookiesPolicyPage'
 
 function App() {
+  const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
+  const isCookiesPolicyPage = pathname === '/cookies-policy'
+
   return (
     <div>
-      <Hero />
-      <AboutQpay />
-      <Testimonials />
-      <AppShowcase />
-      <ComingSoonSection />
-      <FAQs />
+      {isCookiesPolicyPage ? (
+        <CookiesPolicyPage />
+      ) : (
+        <>
+          <Hero />
+          <AboutQpay />
+          <Testimonials />
+          <AppShowcase />
+          <ComingSoonSection />
+          <FAQs />
+        </>
+      )}
       <Footer />
     </div>
   )

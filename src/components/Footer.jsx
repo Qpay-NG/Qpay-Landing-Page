@@ -6,9 +6,15 @@ const Footer = () => {
   return (
     <footer className="border-t border-white/10 bg-[#26282d] text-white">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-4 px-6 py-5 sm:flex-row sm:items-center sm:justify-between md:px-12">
-        <p className="text-center text-sm text-white/90 sm:text-left">
-          &copy; 2026 QPay. All rights reserved.
-        </p>
+        <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
+          <p className="text-sm text-white/90">&copy; 2026 QPay. All rights reserved.</p>
+          <a
+            href="/cookies-policy"
+            className="text-xs font-medium text-white/65 transition-colors duration-200 hover:text-white"
+          >
+            Cookies Policy
+          </a>
+        </div>
 
         <div className="flex items-center justify-center gap-6 sm:justify-end">
           <a
