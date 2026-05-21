@@ -27,6 +27,8 @@ const tocItems = [
 const legalLinkClass =
   'font-medium text-slate-800 underline decoration-slate-400 underline-offset-4 hover:text-slate-950'
 
+const listClass = 'list-square space-y-3 pl-6'
+
 function PrivacyPolicyPage() {
   useEffect(() => {
     document.title = 'Privacy Policy | QPay NG'
@@ -55,7 +57,7 @@ function PrivacyPolicyPage() {
               Legal
             </p>
             <h1 className="text-4xl leading-tight text-slate-950 sm:text-5xl md:text-[3.5rem]">
-              Privacy Policy
+              PRIVACY POLICY
             </h1>
             <p className="mt-4 text-sm text-slate-500 sm:text-base">
               Last updated: May 20, 2026
@@ -74,27 +76,39 @@ function PrivacyPolicyPage() {
           <article className="min-w-0 rounded-lg border border-slate-200 bg-white px-6 py-10 shadow-sm sm:px-8 md:px-12 md:py-12">
             <div className="space-y-8 text-[15px] leading-8 text-slate-700 sm:text-[16px] sm:leading-9">
               <p>
-                This Privacy Notice for <strong>QPay-NG</strong> describes how
-                and why we might access, collect, store, use, and/or share your
-                personal information when you use our services, including when
-                you visit{' '}
-                <a
-                  href="https://qpay-ng.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={legalLinkClass}
-                >
-                  https://qpay-ng.com
-                </a>
-                , download and use our mobile application, or engage with us in
-                other related ways, including marketing or events.
+                This Privacy Notice for <strong>QPay-NG</strong> ('<strong>we</strong>', '<strong>us</strong>', or '<strong>our</strong>'), describes how and why we might access, collect, store, use, and/or share ('<strong>process</strong>') your personal information when you use our services ('<strong>Services</strong>'), including when you:
               </p>
+
+              <ul className={listClass}>
+                <li>
+                  Visit our website at{' '}
+                  <a
+                    href="https://qpay-ng.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={legalLinkClass}
+                  >
+                    https://qpay-ng.com
+                  </a>{' '}
+                  or any website of ours that links to this Privacy Notice
+                </li>
+                <li>
+                  Download and use our mobile application (QPay-NG), or any
+                  other application of ours that links to this Privacy Notice
+                </li>
+                <li>
+                  Engage with us in other related ways, including any marketing
+                  or events
+                </li>
+              </ul>
+
               <p>
-                Questions or concerns? Reading this Privacy Notice will help you
-                understand your privacy rights and choices. If you do not agree
-                with our policies and practices, please do not use our Services.
-                If you still have any questions or concerns, please contact us
-                at{' '}
+                <strong>Questions or concerns?</strong> Reading this Privacy
+                Notice will help you understand your privacy rights and choices.
+                We are responsible for making decisions about how your personal
+                information is processed. If you do not agree with our policies
+                and practices, please do not use our Services. If you still
+                have any questions or concerns, please contact us at{' '}
                 <a href="mailto:support@qpay-ng.com" className={legalLinkClass}>
                   support@qpay-ng.com
                 </a>
@@ -107,12 +121,25 @@ function PrivacyPolicyPage() {
                 </h2>
                 <div className="mt-6 space-y-5">
                   <p>
-                    This summary provides key points from our Privacy Notice,
-                    but you can find more detail on any topic by using the{' '}
+                    <strong>
+                      <em>
+                        This summary provides key points from our Privacy
+                        Notice, but you can find out more details about any of
+                        these topics by clicking the link following each key
+                        point or by using our{' '}
+                      </em>
+                    </strong>
                     <a href="#toc" className={legalLinkClass}>
-                      table of contents
-                    </a>{' '}
-                    below.
+                      <strong>
+                        <em>table of contents</em>
+                      </strong>
+                    </a>
+                    <strong>
+                      <em>
+                        {' '}
+                        below to find the section you are looking for.
+                      </em>
+                    </strong>
                   </p>
                   <p>
                     <strong className="text-slate-950">
@@ -129,9 +156,12 @@ function PrivacyPolicyPage() {
                     <strong className="text-slate-950">
                       Do we process any sensitive personal information?
                     </strong>{' '}
-                    We may process certain sensitive personal information when
+                    Some of the information may be considered 'special' or
+                    'sensitive' in certain jurisdictions, for example your
+                    racial or ethnic origins, sexual orientation, and religious
+                    beliefs. We may process sensitive personal information when
                     necessary with your consent or as otherwise permitted by
-                    law. Learn more about{' '}
+                    applicable law. Learn more about{' '}
                     <a href="#sensitiveinfo" className={legalLinkClass}>
                       sensitive information we process
                     </a>
@@ -149,8 +179,10 @@ function PrivacyPolicyPage() {
                     </strong>{' '}
                     We process your information to provide, improve, and
                     administer our Services, communicate with you, for security
-                    and fraud prevention, and to comply with law. Learn more
-                    about{' '}
+                    and fraud prevention, and to comply with law. We may also
+                    process your information for other purposes with your
+                    consent. We process your information only when we have a
+                    valid legal reason to do so. Learn more about{' '}
                     <a href="#infouse" className={legalLinkClass}>
                       how we process your information
                     </a>
@@ -158,7 +190,8 @@ function PrivacyPolicyPage() {
                   </p>
                   <p>
                     <strong className="text-slate-950">
-                      When and with whom do we share personal information?
+                    In what situations and with which parties do we share
+                    personal information?
                     </strong>{' '}
                     We may share information in specific situations and with
                     specific third parties. Learn more about{' '}
@@ -171,8 +204,15 @@ function PrivacyPolicyPage() {
                     <strong className="text-slate-950">
                       How do we keep your information safe?
                     </strong>{' '}
-                    We use organisational and technical measures, but no system
-                    can be guaranteed 100% secure. Learn more about{' '}
+                    We have adequate organisational and technical processes and
+                    procedures in place to protect your personal information.
+                    However, no electronic transmission over the internet or
+                    information storage technology can be guaranteed to be 100%
+                    secure, so we cannot promise or guarantee that hackers,
+                    cybercriminals, or other unauthorised third parties will
+                    not be able to defeat our security and improperly collect,
+                    access, steal, or modify your information. Learn more
+                    about{' '}
                     <a href="#infosafe" className={legalLinkClass}>
                       how we keep your information safe
                     </a>
@@ -194,7 +234,7 @@ function PrivacyPolicyPage() {
                     <strong className="text-slate-950">
                       How do you exercise your rights?
                     </strong>{' '}
-                    The easiest way is by submitting a{' '}
+                    The easiest way to exercise your rights is by submitting a{' '}
                     <a
                       href="https://app.termly.io/dsar/effe54f8-c98d-42e2-a3ce-518796d7fe73"
                       target="_blank"
@@ -204,6 +244,14 @@ function PrivacyPolicyPage() {
                       data subject access request
                     </a>{' '}
                     or by contacting us directly.
+                  </p>
+                  <p>
+                    Want to learn more about what we do with any information we
+                    collect?{' '}
+                    <a href="#toc" className={legalLinkClass}>
+                      Review the Privacy Notice in full
+                    </a>
+                    .
                   </p>
                 </div>
               </section>
@@ -242,7 +290,11 @@ function PrivacyPolicyPage() {
                     <strong className="text-slate-950">
                       Personal Information Provided by You.
                     </strong>{' '}
-                    The personal information that we collect may include:
+                    The personal information that we collect depends on the
+                    context of your interactions with us and the Services, the
+                    choices you make, and the products and features you use.
+                    The personal information we collect may include the
+                    following:
                   </p>
                   <ul className="list-square space-y-3 pl-6">
                     <li>names</li>
@@ -261,8 +313,8 @@ function PrivacyPolicyPage() {
                   <h3 className="text-xl text-slate-900">Sensitive Information</h3>
                   <p className="mt-4">
                     When necessary, with your consent or as otherwise permitted
-                    by applicable law, we may process the following categories
-                    of sensitive information:
+                    by applicable law, we process the following categories of
+                    sensitive information:
                   </p>
                   <ul className="list-square space-y-3 pl-6">
                     <li>social security numbers or other government identifiers</li>
@@ -274,9 +326,10 @@ function PrivacyPolicyPage() {
                   <p className="mt-4">
                     We may collect data necessary to process your payment if you
                     choose to make purchases, such as your payment instrument
-                    number and security code. Payment data is handled and stored
-                    by Paystack and Monnify. Their privacy notices are
-                    available here:
+                    number, and the security code associated with your payment
+                    instrument. All payment data is handled and stored by
+                    Paystack and Monnify. You may find their privacy notice
+                    links here:
                   </p>
                   <ul className="list-square space-y-3 pl-6">
                     <li>
@@ -352,8 +405,8 @@ function PrivacyPolicyPage() {
                   <strong className="text-slate-950">In Short:</strong> We
                   process your information to provide, improve, and administer
                   our Services, communicate with you, for security and fraud
-                  prevention, comply with law, and for other purposes with your
-                  consent where appropriate.
+                  prevention, and to comply with law. We may also process your
+                  information for other purposes with your consent.
                 </p>
                 <p>
                   We process your personal information for a variety of reasons,
@@ -365,8 +418,9 @@ function PrivacyPolicyPage() {
                       To facilitate account creation and authentication and
                       otherwise manage user accounts.
                     </strong>{' '}
-                    We may process your information so you can create and log in
-                    to your account and keep your account in working order.
+                    We may process your information so you can create and log
+                    in to your account, as well as keep your account in working
+                    order.
                   </li>
                   <li>
                     <strong className="text-slate-950">
@@ -380,8 +434,9 @@ function PrivacyPolicyPage() {
                     <strong className="text-slate-950">
                       To respond to user inquiries and offer support.
                     </strong>{' '}
-                    We may process your information to respond to inquiries and
-                    solve issues you might have with the requested service.
+                    We may process your information to respond to your
+                    inquiries and solve any potential issues you might have
+                    with the requested service.
                   </li>
                   <li>
                     <strong className="text-slate-950">
@@ -411,7 +466,10 @@ function PrivacyPolicyPage() {
                   share information in specific situations described in this
                   section and/or with the following third parties.
                 </p>
-                <p>We may need to share your personal information in the following situations:</p>
+                <p>
+                  We may need to share your personal information in the
+                  following situations:
+                </p>
                 <ul className="list-square space-y-3 pl-6">
                   <li>
                     <strong className="text-slate-950">Business Transfers.</strong>{' '}
@@ -433,20 +491,20 @@ function PrivacyPolicyPage() {
                   store your information.
                 </p>
                 <p>
-                  We may use cookies and similar tracking technologies, like web
-                  beacons and pixels, to gather information when you interact
-                  with our Services. Some online tracking technologies help us
-                  maintain the security of our Services and your account,
-                  prevent crashes, fix bugs, save your preferences, and assist
-                  with basic site functions.
+                  We may use cookies and similar tracking technologies (like
+                  web beacons and pixels) to gather information when you
+                  interact with our Services. Some online tracking technologies
+                  help us maintain the security of our Services and your
+                  account, prevent crashes, fix bugs, save your preferences,
+                  and assist with basic site functions.
                 </p>
                 <p>
                   We also permit third parties and service providers to use
                   online tracking technologies on our Services for analytics and
                   advertising, including to help manage and display
-                  advertisements, tailor advertisements to your interests, or
-                  send abandoned shopping cart reminders depending on your
-                  communication preferences.
+                  advertisements, to tailor advertisements to your interests,
+                  or to send abandoned shopping cart reminders (depending on
+                  your communication preferences).
                 </p>
                 <p>
                   Specific information about how we use such technologies and
