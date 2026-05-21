@@ -1,5 +1,8 @@
 import { useEffect } from 'react'
 
+const legalLinkClass =
+  'font-medium text-slate-800 underline decoration-slate-400 underline-offset-4 hover:text-slate-950'
+
 const policySections = [
   {
     title: 'Interpretation',
@@ -76,27 +79,26 @@ function CookiesPolicyPage() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-[#f7f5f1] text-slate-900">
-      <section className="relative overflow-hidden bg-[#15181d] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(249,84,29,0.22),transparent_36%)]" />
-        <div className="relative mx-auto flex w-full max-w-[1100px] flex-col gap-6 px-6 py-14 sm:px-8 md:px-12 md:py-20">
+    <main className="min-h-screen bg-[#f3f4f6] text-slate-900">
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto flex w-full max-w-[1100px] flex-col gap-6 px-6 py-14 sm:px-8 md:px-12 md:py-16">
           <a
             href="/"
-            className="w-fit rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 transition-colors hover:bg-white/10"
+            className="w-fit rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-950"
           >
             Back to Home
           </a>
           <div className="max-w-3xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-white/60">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
               Legal
             </p>
-            <h1 className="text-4xl leading-none text-white sm:text-5xl md:text-6xl">
+            <h1 className="text-4xl leading-tight text-slate-950 sm:text-5xl md:text-[3.5rem]">
               Cookies Policy
             </h1>
-            <p className="mt-4 text-sm text-white/70 sm:text-base">
+            <p className="mt-4 text-sm text-slate-500 sm:text-base">
               Last updated: May 20, 2026
             </p>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-white/82 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg">
               This Cookies Policy explains what Cookies are and how We use them.
               You should read this policy so You can understand what type of
               cookies We use, or the information We collect using Cookies and
@@ -108,8 +110,8 @@ function CookiesPolicyPage() {
 
       <section className="mx-auto w-full max-w-[1100px] px-6 py-12 sm:px-8 md:px-12 md:py-16">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
-          <article className="min-w-0 rounded-[2rem] border border-slate-200 bg-white px-6 py-8 shadow-[0_20px_60px_rgba(15,23,42,0.06)] sm:px-8 md:px-10 md:py-10">
-            <div className="space-y-6 text-[15px] leading-8 text-slate-700 sm:text-base">
+          <article className="min-w-0 rounded-lg border border-slate-200 bg-white px-6 py-10 shadow-sm sm:px-8 md:px-12 md:py-12">
+            <div className="space-y-8 text-[15px] leading-8 text-slate-700 sm:text-[16px] sm:leading-9">
               <p>
                 This Cookies Policy has been created with the help of the
                 Cookies Policy Generator.
@@ -119,9 +121,11 @@ function CookiesPolicyPage() {
                 personally identifies a user, but personal information that We
                 store about You may be linked to the information stored in and
                 obtained from Cookies. For further information on how We use,
-                store and keep your personal data secure, see our Privacy
-                Policy, if and when We make it available within the Website or
-                on our website.
+                store and keep your personal data secure, see our{' '}
+                <a href="/privacy-policy" className={legalLinkClass}>
+                  Privacy Policy
+                </a>
+                .
               </p>
               <p>
                 We do not store sensitive personal information, such as mailing
@@ -133,13 +137,13 @@ function CookiesPolicyPage() {
                   <h2 className="text-2xl text-slate-950">
                     Interpretation and Definitions
                   </h2>
-                  <div className="mt-5 space-y-8">
+                  <div className="mt-6 space-y-10">
                     {policySections.map((section) => (
                       <div key={section.title}>
                         <h3 className="text-xl text-slate-900">
                           {section.title}
                         </h3>
-                        <div className="mt-3 space-y-4">
+                        <div className="mt-4 space-y-5">
                           {section.paragraphs?.map((paragraph) => (
                             <p key={paragraph}>{paragraph}</p>
                           ))}
@@ -162,8 +166,8 @@ function CookiesPolicyPage() {
                     The Use of Cookies
                   </h2>
 
-                  <div className="mt-5 space-y-6">
-                    <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50/80 p-6">
+                  <div className="mt-6 space-y-8">
+                    <div className="rounded-lg border border-slate-200 bg-slate-50 p-6">
                       <h3 className="text-xl text-slate-900">
                         Necessary / Essential Cookies
                       </h3>
@@ -193,7 +197,7 @@ function CookiesPolicyPage() {
                       </p>
                     </div>
 
-                    <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50/80 p-6">
+                    <div className="rounded-lg border border-slate-200 bg-slate-50 p-6">
                       <h3 className="text-xl text-slate-900">
                         Functionality Cookies
                       </h3>
@@ -228,7 +232,7 @@ function CookiesPolicyPage() {
                   <h2 className="text-2xl text-slate-950">
                     Your Choices Regarding Cookies
                   </h2>
-                  <div className="mt-5 space-y-4">
+                  <div className="mt-6 space-y-5">
                     <p>
                       If You prefer to avoid the use of Cookies on the Website,
                       first You must disable the use of Cookies in your browser
@@ -246,8 +250,8 @@ function CookiesPolicyPage() {
                       browser to delete or refuse Cookies, please visit the help
                       pages of your web browser.
                     </p>
-                    <div className="rounded-[1.5rem] border border-slate-200 bg-[#fff8f4] p-6">
-                      <ul className="space-y-3">
+                    <div className="rounded-lg border border-slate-200 bg-slate-50 p-6">
+                      <ul className="space-y-4">
                         {browserLinks.map((browser) => (
                           <li key={browser.name}>
                             For the {browser.name} web browser, please visit{' '}
@@ -255,7 +259,7 @@ function CookiesPolicyPage() {
                               href={browser.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="font-semibold text-customOrange underline decoration-customOrange/40 underline-offset-4"
+                              className={legalLinkClass}
                             >
                               this page
                             </a>{' '}
@@ -292,7 +296,7 @@ function CookiesPolicyPage() {
                     By email:{' '}
                     <a
                       href="mailto:support@qpay-ng.com"
-                      className="font-semibold text-customOrange underline decoration-customOrange/40 underline-offset-4"
+                      className={legalLinkClass}
                     >
                       support@qpay-ng.com
                     </a>
@@ -303,11 +307,11 @@ function CookiesPolicyPage() {
           </article>
 
           <aside className="lg:sticky lg:top-8 lg:self-start">
-            <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)]">
+            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
                 Quick Summary
               </p>
-              <ul className="mt-4 space-y-4 text-sm leading-7 text-slate-700">
+              <ul className="mt-4 space-y-5 text-sm leading-8 text-slate-700">
                 <li>We use session and persistent cookies on qpay-ng.com.</li>
                 <li>Necessary cookies help the website work properly.</li>
                 <li>Functionality cookies remember your choices and preferences.</li>

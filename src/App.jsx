@@ -7,15 +7,19 @@ import AppShowcase from './components/AppShowcase'
 import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
 import CookiesPolicyPage from './components/CookiesPolicyPage'
+import PrivacyPolicyPage from './components/PrivacyPolicyPage'
 
 function App() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
   const isCookiesPolicyPage = pathname === '/cookies-policy'
+  const isPrivacyPolicyPage = pathname === '/privacy-policy'
 
   return (
     <div>
       {isCookiesPolicyPage ? (
         <CookiesPolicyPage />
+      ) : isPrivacyPolicyPage ? (
+        <PrivacyPolicyPage />
       ) : (
         <>
           <Hero />
