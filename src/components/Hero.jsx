@@ -39,7 +39,7 @@ const QLogo = ({ className = "" }) => (
   </div>
 );
 
-const Hero = () => {
+const Hero = ({ autoOpenContactModal = false }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [email, setEmail] = useState("");
@@ -101,6 +101,11 @@ const Hero = () => {
       window.removeEventListener(CONTACT_MODAL_EVENT, handleOpenContactModal);
     };
   }, []);
+
+  useEffect(() => {
+    if (!autoOpenContactModal) return;
+    openModal();
+  }, [autoOpenContactModal]);
 
   useEffect(() => {
     return () => {

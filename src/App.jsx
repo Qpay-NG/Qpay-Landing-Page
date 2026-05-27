@@ -13,6 +13,7 @@ function App() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
   const isCookiesPolicyPage = pathname === '/cookies-policy'
   const isPrivacyPolicyPage = pathname === '/privacy-policy'
+  const isContactUsPage = pathname === '/contact-us'
 
   return (
     <div>
@@ -22,7 +23,7 @@ function App() {
         <PrivacyPolicyPage />
       ) : (
         <>
-          <Hero />
+          <Hero autoOpenContactModal={isContactUsPage} />
           <AboutQpay />
           <Testimonials />
           <AppShowcase />
