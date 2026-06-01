@@ -25,4 +25,4 @@ __MACOSX/
 *.sln
 *.sw?
 .env
-
+!.env.example

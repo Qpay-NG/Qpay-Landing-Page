@@ -14,8 +14,7 @@ import Magnetic from "./Magnetic";
 import OptimizedPicture from "./OptimizedPicture";
 import { CONTACT_MODAL_EVENT } from "../utils/contactModal";
 
-const CONTACT_API_URL =
-  "https://landingpageqpay.mythriftpayments.cc/api/v1/contact";
+const CONTACT_API_URL = import.meta.env.VITE_QPAY_CONTACT_API_URL;
 const CONTACT_API_KEY = import.meta.env.VITE_QPAY_CONTACT_API_KEY;
 
 const heroImage = {
@@ -216,7 +215,7 @@ const Hero = ({ autoOpenContactModal = false }) => {
       return;
     }
 
-    if (!CONTACT_API_KEY) {
+    if (!CONTACT_API_URL || !CONTACT_API_KEY) {
       showModalError("Contact form is not configured yet.");
       return;
     }
