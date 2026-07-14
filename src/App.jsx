@@ -8,12 +8,14 @@ import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
 import CookiesPolicyPage from './components/CookiesPolicyPage'
 import PrivacyPolicyPage from './components/PrivacyPolicyPage'
+import FoundersPage from './components/FoundersPage'
 
 function App() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
   const isCookiesPolicyPage = pathname === '/cookies-policy'
   const isPrivacyPolicyPage = pathname === '/privacy-policy'
   const isContactUsPage = pathname === '/contact-us'
+  const isFoundersPage = pathname === '/founders'
 
   return (
     <div>
@@ -21,6 +23,8 @@ function App() {
         <CookiesPolicyPage />
       ) : isPrivacyPolicyPage ? (
         <PrivacyPolicyPage />
+      ) : isFoundersPage ? (
+        <FoundersPage />
       ) : (
         <>
           <Hero autoOpenContactModal={isContactUsPage} />
