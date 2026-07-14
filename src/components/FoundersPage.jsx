@@ -27,11 +27,18 @@ const founders = [
   },
 ];
 
-const PlaceholderAvatar = () => (
-  <div className="relative flex h-full min-h-[380px] items-center justify-center overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_top,_rgba(249,115,22,0.15),_transparent_42%),linear-gradient(160deg,#f7f7f4_0%,#eceff3_100%)]">
+const PlaceholderAvatar = ({ alt }) => (
+  <div
+    role="img"
+    aria-label={alt}
+    className="relative flex h-full min-h-[380px] items-center justify-center overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_top,_rgba(249,115,22,0.15),_transparent_42%),linear-gradient(160deg,#f7f7f4_0%,#eceff3_100%)]"
+  >
     <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(15,23,42,0.02),transparent_55%)]" />
     <div className="relative flex h-32 w-32 items-center justify-center rounded-full border border-white/70 bg-white/80 shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
-      <span className="text-3xl font-semibold tracking-[0.18em] text-slate-500">
+      <span
+        aria-hidden="true"
+        className="text-3xl font-semibold tracking-[0.18em] text-slate-500"
+      >
         JW
       </span>
     </div>
@@ -84,7 +91,7 @@ const FoundersPage = () => {
                     className="h-[380px] w-full rounded-[1.6rem] object-cover object-top"
                   />
                 ) : (
-                  <PlaceholderAvatar />
+                  <PlaceholderAvatar alt={founder.alt} />
                 )}
               </div>
 

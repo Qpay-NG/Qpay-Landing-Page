@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from 'vitest';
-import { cleanup, render, screen } from '@testing-library/react';
+import { cleanup, render, screen, within } from '@testing-library/react';
 
 afterEach(() => {
   cleanup();
@@ -43,6 +43,18 @@ describe('Founders route', () => {
     expect(
       screen.getByText(/commerce should not pause because the network does/i)
     ).toBeInTheDocument();
+
+    expect(
+      screen.getByRole('img', { name: /portrait of olagbegi eniola/i })
+    ).toHaveAttribute('src', '/founders-eniola.jpg');
+    expect(
+      screen.getByRole('img', { name: /portrait of nneji joseph/i })
+    ).toHaveAttribute('src', '/founders-joseph.jpeg');
+    expect(
+      screen.getByRole('img', {
+        name: /default profile illustration for jack wilson/i,
+      })
+    ).toBeInTheDocument();
   });
 
   it('adds founders under the company footer links', async () => {
@@ -50,7 +62,15 @@ describe('Founders route', () => {
 
     render(<App />);
 
-    const foundersLink = screen.getByRole('link', { name: /founders/i });
+    expect(screen.queryByText(/olagbegi eniola/i)).not.toBeInTheDocument();
+
+    const companyLinks = screen.getByRole('navigation', {
+      name: /company links/i,
+    });
+    const foundersLink = within(companyLinks).getByRole('link', {
+      name: /founders/i,
+    });
+
     expect(foundersLink).toHaveAttribute('href', '/founders');
   });
 });

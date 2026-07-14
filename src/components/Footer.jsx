@@ -54,8 +54,8 @@ const Footer = () => {
               <img
                 src="/footer-logo.png"
                 alt="QPay"
-                width="320"
-                height="96"
+                width="1541"
+                height="453"
                 decoding="async"
                 className="h-20 w-auto object-contain sm:h-24"
               />
@@ -82,7 +82,10 @@ const Footer = () => {
           </div>
 
           {footerColumns.map((column) => (
-            <div key={column.heading}>
+            <nav
+              key={column.heading}
+              aria-label={`${column.heading} links`}
+            >
               <h3 className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-slate-800">
                 {column.heading}
               </h3>
@@ -94,7 +97,7 @@ const Footer = () => {
                   </a>
                 ))}
               </div>
-            </div>
+            </nav>
           ))}
         </div>
 
