@@ -11,7 +11,7 @@ const founders = [
   },
   {
     name: 'Nneji Joseph',
-    role: 'COO & Marketing Lead',
+    role: 'Co-Founder & COO',
     image: '/founders-joseph.jpeg',
     alt: 'Portrait of Nneji Joseph',
     statement:
@@ -19,7 +19,7 @@ const founders = [
   },
   {
     name: 'Jack Wilson',
-    role: 'CTO',
+    role: 'Co-Founder & CTO',
     image: null,
     alt: 'Default profile illustration for Jack Wilson',
     statement:
@@ -31,7 +31,7 @@ const PlaceholderAvatar = ({ alt }) => (
   <div
     role="img"
     aria-label={alt}
-    className="relative flex h-full min-h-[380px] items-center justify-center overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_top,_rgba(249,115,22,0.15),_transparent_42%),linear-gradient(160deg,#f7f7f4_0%,#eceff3_100%)]"
+    className="relative mx-auto flex aspect-[4/5] min-h-[220px] w-full max-w-[16rem] items-center justify-center overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_top,_rgba(249,115,22,0.15),_transparent_42%),linear-gradient(160deg,#f7f7f4_0%,#eceff3_100%)] sm:min-h-[250px] sm:max-w-[17rem] lg:min-h-[300px] lg:max-w-[18rem]"
   >
     <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(15,23,42,0.02),transparent_55%)]" />
     <div className="relative flex h-32 w-32 items-center justify-center rounded-full border border-white/70 bg-white/80 shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
@@ -81,14 +81,14 @@ const FoundersPage = () => {
               transition={{ duration: 0.55, delay: index * 0.08 }}
               className="overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white shadow-[0_18px_60px_rgba(15,23,42,0.06)]"
             >
-              <div className="relative p-5">
+              <div className="relative p-4 sm:p-5">
                 {founder.image ? (
                   <img
                     src={founder.image}
                     alt={founder.alt}
                     loading="lazy"
                     decoding="async"
-                    className="h-[380px] w-full rounded-[1.6rem] object-cover object-top"
+                    className="mx-auto aspect-[4/5] min-h-[220px] w-full max-w-[16rem] rounded-[1.6rem] object-cover object-top sm:min-h-[250px] sm:max-w-[17rem] lg:min-h-[300px] lg:max-w-[18rem]"
                   />
                 ) : (
                   <PlaceholderAvatar alt={founder.alt} />

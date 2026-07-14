@@ -54,10 +54,10 @@ const Footer = () => {
               <img
                 src="/footer-logo.png"
                 alt="QPay"
-                width="1541"
-                height="453"
+                width="180"
+                height="53"
                 decoding="async"
-                className="h-20 w-auto object-contain sm:h-24"
+                className="h-12 w-auto object-contain sm:h-14"
               />
             </a>
 

@@ -33,13 +33,13 @@ describe('Founders route', () => {
     ).toBeInTheDocument();
 
     expect(screen.getByText(/nneji joseph/i)).toBeInTheDocument();
-    expect(screen.getByText(/coo & marketing lead/i)).toBeInTheDocument();
+    expect(screen.getByText(/co-founder & coo/i)).toBeInTheDocument();
     expect(
       screen.getByText(/practical answer to the everyday payment barriers/i)
     ).toBeInTheDocument();
 
     expect(screen.getByText(/jack wilson/i)).toBeInTheDocument();
-    expect(screen.getByText(/^cto$/i)).toBeInTheDocument();
+    expect(screen.getByText(/co-founder & cto/i)).toBeInTheDocument();
     expect(
       screen.getByText(/commerce should not pause because the network does/i)
     ).toBeInTheDocument();
