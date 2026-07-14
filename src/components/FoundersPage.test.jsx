@@ -44,4 +44,13 @@ describe('Founders route', () => {
       screen.getByText(/commerce should not pause because the network does/i)
     ).toBeInTheDocument();
   });
+
+  it('adds founders under the company footer links', async () => {
+    const { default: App } = await import('../App.jsx');
+
+    render(<App />);
+
+    const foundersLink = screen.getByRole('link', { name: /founders/i });
+    expect(foundersLink).toHaveAttribute('href', '/founders');
+  });
 });
