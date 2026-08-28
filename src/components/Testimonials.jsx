@@ -2,35 +2,29 @@
 
 const Testimonials = () => {
   const statPills = [
-    { text: "Active and growing community" },
-    { text: "Available all across Nigeria" },
-    { text: "Amazing user feedbacks" },
+    { text: "Designed for everyday commerce" },
+    { text: "Built for diverse payment contexts" },
+    { text: "Illustrative payment scenarios" },
   ];
 
   const testimonials = [
     {
-      quote: "I run a fabric stall in Tejuosho and bad network used to slow down every sale. With QPay, customers scan and pay offline in seconds. Checkout is faster and nobody gets stuck waiting.",
-      name: "Funmi Adeyemi",
-      role: "Fabric Trader \u00B7 Tejuosho Market, Lagos",
-      avatar: "https://images.pexels.com/photos/20756309/pexels-photo-20756309.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=2",
+      quote: "Illustrative use case: A market seller prepares QR payment instructions when connectivity is limited, helping keep checkout easier to follow.",
+      audience: "Market seller",
       delay: 0,
       isHero: true,
       marginTop: "mt-0",
     },
     {
-      quote: "I paid a POS merchant during a blackout when there was no signal at all. We used QPay offline QR and it confirmed in seconds. Since then, I use it anytime regular transfers are hanging.",
-      name: "Chidi Okafor",
-      role: "Student \u00B7 University of Nigeria, Nsukka",
-      avatar: "https://images.pexels.com/photos/23801235/pexels-photo-23801235.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=2",
+      quote: "Illustrative use case: A student prepares a QPay QR payment instruction during a period of limited connectivity; final processing follows the relevant payment infrastructure.",
+      audience: "Student",
       delay: 0.15,
       isHero: false,
       marginTop: "md:mt-16",
     },
     {
-      quote: "As a dispatch rider, I deliver in places where signal drops all the time. QPay lets customers pay me right there offline. I complete more deliveries without the usual payment back and forth.",
-      name: "Segun Balogun",
-      role: "Dispatch Rider \u00B7 Ibadan",
-      avatar: "https://images.pexels.com/photos/17612326/pexels-photo-17612326.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=2",
+      quote: "Illustrative use case: A dispatch rider prepares payment instructions in areas with limited connectivity, while processing and confirmation follow the relevant payment infrastructure.",
+      audience: "Dispatch rider",
       delay: 0.3,
       isHero: false,
       marginTop: "md:mt-8",
@@ -50,10 +44,10 @@ const Testimonials = () => {
           className="mb-12"
         >
           <p className="text-customOrange text-xs font-semibold tracking-widest uppercase text-center mb-3">
-            REAL PEOPLE. REAL PAYMENTS.
+            ILLUSTRATIVE USE CASES
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 text-center leading-tight max-w-3xl mx-auto">
-            Nigerians Are Already Paying Offline.
+            Payment moments QPay is designed for.
           </h2>
         </motion.div>
 
@@ -106,24 +100,9 @@ const Testimonials = () => {
                 &quot;{item.quote}&quot;
               </p>
 
-              {/* Bottom author row */}
-              <div className="flex items-center gap-4 mt-auto relative z-10">
-                <motion.img
-                  initial={{ scale: 0, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.4, delay: item.delay + 0.3 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  src={item.avatar}
-                  alt={item.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-12 h-12 rounded-full object-cover border-2 border-orange-100"
-                />
-                <div className="flex flex-col">
-                  <span className="text-gray-900 font-bold text-sm">{item.name}</span>
-                  <span className="text-gray-400 text-xs mt-0.5">{item.role}</span>
-                </div>
-              </div>
+              <p className="text-gray-400 text-xs font-semibold uppercase tracking-[0.16em] relative z-10">
+                Example use case · {item.audience}
+              </p>
 
               {/* Bottom accent bar */}
               <div className="h-1.5 w-full rounded-full bg-gradient-to-r from-customOrange to-orange-300 mt-6 relative z-10" />

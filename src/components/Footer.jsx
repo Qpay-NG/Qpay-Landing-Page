@@ -8,7 +8,7 @@ const footerColumns = [
     links: [
       { label: 'How It Works', href: '/#how-it-works' },
       { label: 'Security', href: '/#app-showcase' },
-      { label: 'Get the App', href: '/#coming-soon' },
+      { label: 'Join the Waitlist', href: '/#coming-soon' },
     ],
   },
   {
@@ -62,7 +62,7 @@ const Footer = () => {
             </a>
 
             <p className="mt-6 max-w-[20rem] text-[16px] leading-7 text-slate-700 sm:text-[17px]">
-              Seamless offline payments, built for everyday commerce.
+              Payment experiences for everyday commerce, designed for low connectivity.
             </p>
 
             <div className="mt-10 flex items-center gap-4">
@@ -104,7 +104,7 @@ const Footer = () => {
         <div className="mt-14 border-t border-slate-200 pt-8">
           <div className="flex flex-col gap-3 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
             <p className="text-[14px] text-slate-600">
-              &copy; 2026 QPay. All rights reserved.
+              &copy; 2026 Modulo Technologies LTD. All rights reserved.
             </p>
             <p className="text-[14px] text-slate-600">
               Built for dependable payments, even when the network is not.

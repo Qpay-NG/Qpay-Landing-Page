@@ -445,11 +445,12 @@ const AboutQpay = () => {
             How It Works
           </p>
           <h2 className="font-heading mb-4 text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
-            Three Steps. Zero Internet.
+            Three Steps. Built for Low Connectivity.
           </h2>
           <p className="font-body mx-auto max-w-xl text-base text-gray-500 md:text-lg">
-            No signal needed at any step. QPay handles everything offline,
-            start to finish.
+            QPay is designed to support payment initiation when connectivity is
+            limited. Payment instructions can be securely captured and
+            processed through QPay&apos;s payment infrastructure.
           </p>
         </div>
 
@@ -481,20 +482,20 @@ const AboutQpay = () => {
                       Enter Your Amount
                     </h3>
                     <p className="mb-3 max-w-[12rem] text-[11.5px] leading-[1.55] text-slate-500 min-[390px]:max-w-[13rem] min-[390px]:text-xs sm:max-w-[16rem] sm:text-[1.05rem] sm:leading-[1.45] md:mb-4 md:max-w-sm md:text-[1rem] lg:mb-6 lg:text-lg">
-                      Open QPay and type what you&apos;re paying. Works with zero
-                      bars, zero internet, zero waiting.
+                      Open QPay and type what you&apos;re paying. Payment details can
+                      be prepared on your device when connectivity is limited.
                     </p>
                     <div className="mb-3 w-fit rounded-xl border-l-[3px] border-customOrange bg-[#FFF6F0] px-2.5 py-2 sm:px-4 sm:py-3 md:mb-4 md:px-4 md:py-2.5 lg:mb-6 lg:rounded-r-xl lg:px-4 lg:py-3">
                       <span className="text-[10.5px] font-semibold text-customOrange min-[390px]:text-[11px] sm:text-sm md:text-xs lg:text-sm">
-                        Generates QR in &lt;1s
+                        QR prepared on device
                       </span>
                     </div>
                     <div className="flex max-w-[12rem] flex-wrap gap-1.5 min-[390px]:max-w-[13rem] sm:max-w-[17rem] sm:gap-3 md:max-w-none md:gap-3">
                       <span className="rounded-full bg-[#FFF2E3] px-2.5 py-1.5 text-[9.5px] font-semibold text-[#D97706] sm:px-4 sm:text-sm md:px-3 md:text-[11px] lg:px-4 lg:py-1.5 lg:text-xs">
-                        Works offline
+                        Limited connectivity
                       </span>
                       <span className="rounded-full bg-[#FFF2E3] px-2.5 py-1.5 text-[9.5px] font-semibold text-[#D97706] sm:px-4 sm:text-sm md:px-3 md:text-[11px] lg:px-4 lg:py-1.5 lg:text-xs">
-                        No bars needed
+                        Connectivity can be limited
                       </span>
                     </div>
                   </div>
@@ -512,20 +513,20 @@ const AboutQpay = () => {
                       Step 02
                     </span>
                     <h3 className="mt-3 mb-2 max-w-[12rem] text-[1.22rem] font-extrabold leading-[1.05] text-[#1F2937] min-[390px]:max-w-[13rem] min-[390px]:text-[1.36rem] sm:max-w-[17rem] sm:text-[1.85rem] sm:leading-[1.08] md:mb-3 md:max-w-none md:text-[2.3rem] lg:mb-4 lg:text-5xl">
-                      Your QR Generates Instantly
+                      Your QR Is Prepared on Device
                     </h3>
                     <p className="mb-3 max-w-[12rem] text-[11.5px] leading-[1.55] text-slate-500 min-[390px]:max-w-[13rem] min-[390px]:text-xs sm:max-w-[16rem] sm:text-[1.05rem] sm:leading-[1.45] md:mb-4 md:max-w-sm md:text-[1rem] lg:mb-6 lg:text-lg">
-                      QPay creates a secure, encrypted code directly on your
-                      device. No network needed to generate it.
+                      QPay prepares secure QR payment details on your device
+                      when connectivity is limited.
                     </p>
                     <div className="mb-3 w-fit rounded-xl border-l-[3px] border-customOrange bg-[#FFF6F0] px-2.5 py-2 sm:px-4 sm:py-3 md:mb-4 md:px-4 md:py-2.5 lg:mb-6 lg:rounded-r-xl lg:px-4 lg:py-3">
                       <span className="text-[10.5px] font-semibold text-customOrange min-[390px]:text-[11px] sm:text-sm md:text-xs lg:text-sm">
-                        Encrypted on-device
+                        Payment data on device
                       </span>
                     </div>
                     <div className="flex max-w-[12rem] flex-wrap gap-1.5 min-[390px]:max-w-[13rem] sm:max-w-[17rem] sm:gap-3 md:max-w-none md:gap-3">
                       <span className="rounded-full bg-[#FFF2E3] px-2.5 py-1.5 text-[9.5px] font-semibold text-[#D97706] sm:px-4 sm:text-sm md:px-3 md:text-[11px] lg:px-4 lg:py-1.5 lg:text-xs">
-                        Encrypted instantly
+                        Prepared on device
                       </span>
                       <span className="rounded-full bg-[#FFF2E3] px-2.5 py-1.5 text-[9.5px] font-semibold text-[#D97706] sm:px-4 sm:text-sm md:px-3 md:text-[11px] lg:px-4 lg:py-1.5 lg:text-xs">
                         On-device only
@@ -546,23 +547,24 @@ const AboutQpay = () => {
                       Step 03
                     </span>
                     <h3 className="mt-3 mb-2 max-w-[12rem] text-[1.22rem] font-extrabold leading-[1.05] text-[#1F2937] min-[390px]:max-w-[13rem] min-[390px]:text-[1.36rem] sm:max-w-[17rem] sm:text-[1.85rem] sm:leading-[1.08] md:mb-3 md:max-w-none md:text-[2.3rem] lg:mb-4 lg:text-5xl">
-                      Merchant Scans. Done.
+                      Merchant Scans. Payment Submitted.
                     </h3>
                     <p className="mb-3 max-w-[12rem] text-[11.5px] leading-[1.55] text-slate-500 min-[390px]:max-w-[13rem] min-[390px]:text-xs sm:max-w-[16rem] sm:text-[1.05rem] sm:leading-[1.45] md:mb-4 md:max-w-sm md:text-[1rem] lg:mb-6 lg:text-lg">
-                      They scan your code, it confirms in seconds. Payment
-                      complete, even in a dead zone.
+                      They scan your code, and the payment instruction is
+                      submitted for processing. Final payment status follows
+                      confirmation from the relevant payment infrastructure.
                     </p>
                     <div className="mb-3 w-fit rounded-xl border-l-[3px] border-customOrange bg-[#FFF6F0] px-2.5 py-2 sm:px-4 sm:py-3 md:mb-4 md:px-4 md:py-2.5 lg:mb-6 lg:rounded-r-xl lg:px-4 lg:py-3">
                       <span className="text-[10.5px] font-semibold text-customOrange min-[390px]:text-[11px] sm:text-sm md:text-xs lg:text-sm">
-                        Confirms without internet
+                        Payment status follows processing
                       </span>
                     </div>
                     <div className="flex max-w-[12rem] flex-wrap gap-1.5 min-[390px]:max-w-[13rem] sm:max-w-[17rem] sm:gap-3 md:max-w-none md:gap-3">
                       <span className="rounded-full bg-[#FFF2E3] px-2.5 py-1.5 text-[9.5px] font-semibold text-[#D97706] sm:px-4 sm:text-sm md:px-3 md:text-[11px] lg:px-4 lg:py-1.5 lg:text-xs">
-                        Confirms in seconds
+                        Confirmation may follow
                       </span>
                       <span className="rounded-full bg-[#FFF2E3] px-2.5 py-1.5 text-[9.5px] font-semibold text-[#D97706] sm:px-4 sm:text-sm md:px-3 md:text-[11px] lg:px-4 lg:py-1.5 lg:text-xs">
-                        No bank alert wait
+                        Status can follow later
                       </span>
                     </div>
                   </div>
@@ -609,7 +611,7 @@ const AboutQpay = () => {
                     avif={screenStep3.avif}
                     webp={screenStep3.webp}
                     src={screenStep3.src}
-                    alt="Payment Confirmed Screen"
+                    alt="Payment Status Screen"
                     loading="lazy"
                     decoding="async"
                     imgClassName="block h-full w-full object-contain object-top"
@@ -646,8 +648,8 @@ const AboutQpay = () => {
             WHY QPAY
           </p>
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl">
-            <span className="text-gray-900">Why QPay Works Where Others </span>
-            <span className="text-customOrange">Fail</span>
+            <span className="text-gray-900">Why QPay Is Designed for </span>
+            <span className="text-customOrange">Challenging Connectivity</span>
           </h2>
         </motion.div>
 
@@ -669,12 +671,12 @@ const AboutQpay = () => {
               <FontAwesomeIcon icon={faSignal} className="text-2xl text-customOrange" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900 md:mb-4 md:text-2xl">
-              Internet Not Required.
+              Built for Low Connectivity.
             </h3>
             <p className="font-body mb-6 flex-grow text-sm font-medium leading-relaxed text-gray-500 md:mb-8 md:text-base">
-              Out of data, poor signal, no WiFi, irrelevant. QPay generates
-              your payment entirely on your device. Internet was never part of
-              the equation.
+              Out of data, poor signal, no WiFi? QPay can prepare payment
+              details on your device when connectivity is limited. Final
+              processing follows the relevant payment infrastructure.
             </p>
             <div
               className="group relative mt-4 flex min-h-[200px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/5 bg-[#0A0A0B] p-5 shadow-2xl md:min-h-[260px] md:rounded-3xl md:p-8"
@@ -743,11 +745,12 @@ const AboutQpay = () => {
               <FontAwesomeIcon icon={faBolt} className="text-2xl text-customOrange" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900 md:mb-4 md:text-2xl">
-              Zero Wait Time.
+              A Clearer Payment Flow.
             </h3>
             <p className="font-body mb-6 flex-grow text-sm font-medium leading-relaxed text-gray-500 md:mb-8 md:text-base">
-              Scan and it&apos;s confirmed. No spinning wheel, no transaction
-              processing, no staring at your screen. QPay confirms and that's it.
+              Scan to submit the payment instruction. QPay keeps the flow clear
+              while final processing and confirmation follow the relevant
+              payment infrastructure.
             </p>
             <div className="group relative mt-4 flex min-h-[180px] flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500 via-customOrange to-orange-600 p-5 shadow-2xl md:min-h-[200px] md:p-8">
               <div className="pointer-events-none absolute inset-0 opacity-20">
@@ -787,9 +790,9 @@ const AboutQpay = () => {
               </div>
 
               <div className="mt-8 flex items-baseline gap-1 rounded-md border border-white/10 bg-black/10 px-3 py-1 backdrop-blur-sm">
-                <span className="font-mono text-lg font-bold text-white">2.8</span>
+                <span className="font-mono text-lg font-bold text-white">QR</span>
                 <span className="font-mono text-[10px] uppercase tracking-widest text-white/70">
-                  SEC
+                  PREPARED
                 </span>
               </div>
             </div>
@@ -813,12 +816,12 @@ const AboutQpay = () => {
               />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900 md:mb-4 md:text-2xl">
-              Zero Failed Transactions.
+              Built for Reliable Payments.
             </h3>
             <p className="font-body mb-6 flex-grow text-sm font-medium leading-relaxed text-gray-500 md:mb-8 md:text-base">
-              Every payment that leaves your phone arrives. No network drop
-              mid-transfer, no failed debits, no money stuck in limbo. Sent
-              means received.
+              QPay is designed to reduce payment friction when connectivity is
+              challenging. Confirmation follows processing through the relevant
+              payment infrastructure.
             </p>
             <div className="group relative mt-4 flex min-h-[180px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-orange-100 bg-gradient-to-br from-gray-50 via-orange-50/30 to-white p-5 shadow-xl md:min-h-[200px] md:p-8">
               <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -879,7 +882,7 @@ const AboutQpay = () => {
               <div className="mt-6 flex flex-col items-center gap-1">
                 <div className="mb-1 h-px w-8 bg-customOrange/20" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-customOrange">
-                  Verified Arrival
+                  Payment Status
                 </span>
               </div>
             </div>

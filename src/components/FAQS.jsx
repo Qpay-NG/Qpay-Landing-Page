@@ -22,27 +22,27 @@ const FAQs = () => {
     {
       icon: faCircleInfo,
       question: "What is QPay?",
-      answer: "QPay is a payment app that lets you send money with zero internet. You generate a QR code on your phone, no signal needed, and the merchant scans it. Done.",
+      answer: "QPay is a payment app that helps you initiate payments when customer connectivity is limited. You generate a QR code on your phone, and the merchant scans it. Payment instructions can then be processed through QPay's payment infrastructure.",
     },
     {
       icon: faQrcode,
       question: "How does the offline QR code work?",
-      answer: "You open QPay, enter the amount, and your phone creates a secure QR code instantly, all on device. The merchant scans it with their QPay app, and the payment confirms in seconds.",
+      answer: "You open QPay, enter the amount, and your phone creates a secure QR code on device. The merchant scans it with their QPay app, and the payment instruction can then be processed through QPay's payment infrastructure.",
     },
     {
       icon: faShieldHalved,
       question: "Are offline payments secure?",
-      answer: "Yes. Every QR code is encrypted directly on your device using the same standard banks use.",
+      answer: "QPay is designed to support secure QR payment experiences for customers and merchants. Payment processing follows the relevant payment infrastructure.",
     },
     {
       icon: faUsers,
       question: "Who can use QPay?",
-      answer: "Anyone in Nigeria. If you're a buyer passing through a dead zone, QPay works. If you're a market merchant tired of failed transfers, QPay works.",
+      answer: "QPay is designed for buyers and merchants in Nigeria, including people who need to initiate payments when connectivity is limited.",
     },
     {
       icon: faGaugeHigh,
       question: "Is there a limit to offline payments?",
-      answer: "Offline QR codes have a temporary limit for security. This resets automatically the next time your phone connects to internet. Your transaction history and balance sync instantly when you're back online.",
+      answer: "Offline QR codes may have a temporary limit for security. When your phone reconnects, transaction history and balance can sync through QPay's payment infrastructure.",
     }
   ];
 

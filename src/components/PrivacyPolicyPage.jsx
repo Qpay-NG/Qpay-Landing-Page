@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { openContactModal } from '../utils/contactModal'
 
 const tocItems = [
   { id: 'infocollect', label: '1. WHAT INFORMATION DO WE COLLECT?' },
@@ -63,7 +64,8 @@ function PrivacyPolicyPage() {
               Last updated: May 20, 2026
             </p>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg">
-              This Privacy Notice explains how QPay-NG may access, collect,
+              This Privacy Notice explains how Modulo Technologies LTD, trading
+              as QPay, may access, collect,
               store, use, and share your personal information when you use our
               website, mobile application, and related services.
             </p>
@@ -76,7 +78,7 @@ function PrivacyPolicyPage() {
           <article className="min-w-0 rounded-lg border border-slate-200 bg-white px-6 py-10 shadow-sm sm:px-8 md:px-12 md:py-12">
             <div className="space-y-8 text-[15px] leading-8 text-slate-700 sm:text-[16px] sm:leading-9">
               <p>
-                This Privacy Notice for <strong>QPay-NG</strong> ('<strong>we</strong>', '<strong>us</strong>', or '<strong>our</strong>'), describes how and why we might access, collect, store, use, and/or share ('<strong>process</strong>') your personal information when you use our services ('<strong>Services</strong>'), including when you:
+                This Privacy Notice for <strong>Modulo Technologies LTD, trading as QPay</strong> ('<strong>we</strong>', '<strong>us</strong>', or '<strong>our</strong>'), describes how and why we might access, collect, store, use, and/or share ('<strong>process</strong>') your personal information when you use our services ('<strong>Services</strong>'), including when you:
               </p>
 
               <ul className={listClass}>
@@ -235,14 +237,13 @@ function PrivacyPolicyPage() {
                       How do you exercise your rights?
                     </strong>{' '}
                     The easiest way to exercise your rights is by submitting a{' '}
-                    <a
-                      href="https://app.termly.io/dsar/effe54f8-c98d-42e2-a3ce-518796d7fe73"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      type="button"
+                      onClick={openContactModal}
                       className={legalLinkClass}
                     >
                       data subject access request
-                    </a>{' '}
+                    </button>{' '}
                     or by contacting us directly.
                   </p>
                   <p>
@@ -327,9 +328,9 @@ function PrivacyPolicyPage() {
                     We may collect data necessary to process your payment if you
                     choose to make purchases, such as your payment instrument
                     number, and the security code associated with your payment
-                    instrument. All payment data is handled and stored by
-                    Paystack and Monnify. You may find their privacy notice
-                    links here:
+                    instrument. Payment data may be handled and stored by
+                    regulated payment infrastructure providers. You may find
+                    applicable provider privacy notices here:
                   </p>
                   <ul className="list-square space-y-3 pl-6">
                     <li>
@@ -339,7 +340,7 @@ function PrivacyPolicyPage() {
                         rel="noopener noreferrer"
                         className={legalLinkClass}
                       >
-                        https://paystack.com/privacy/merchant
+                        Payment provider privacy notice
                       </a>
                     </li>
                     <li>
@@ -349,7 +350,7 @@ function PrivacyPolicyPage() {
                         rel="noopener noreferrer"
                         className={legalLinkClass}
                       >
-                        https://monnify.com/privacy
+                        Payment provider privacy notice
                       </a>
                     </li>
                   </ul>
@@ -686,7 +687,7 @@ function PrivacyPolicyPage() {
                   or contact us by post at:
                 </p>
                 <div className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-slate-800">
-                  <p>QPay-NG</p>
+                  <p>Modulo Technologies LTD, trading as QPay</p>
                   <p>No 20 Aderigbigbe Onike, Yaba, Lagos</p>
                   <p>Yaba, Lagos 100213</p>
                   <p>Nigeria</p>
@@ -709,14 +710,13 @@ function PrivacyPolicyPage() {
                 <p>
                   To request to review, update, or delete your personal
                   information, please fill out and submit a{' '}
-                  <a
-                    href="https://app.termly.io/dsar/effe54f8-c98d-42e2-a3ce-518796d7fe73"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={openContactModal}
                     className={legalLinkClass}
                   >
                     data subject access request
-                  </a>
+                  </button>
                   .
                 </p>
               </section>

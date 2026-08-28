@@ -44,8 +44,8 @@ const ComingSoonSection = () => {
           transition={{ delay: 0.3 }}
           className="font-body mx-auto mb-6 max-w-lg text-sm font-medium leading-relaxed text-gray-600 sm:text-base md:mx-0 md:mb-8 md:text-lg lg:text-xl"
         >
-          Download free and start paying offline instantly. No internet needed,
-          no bank account required. Available now on iOS and Android.
+          QPay is being prepared for launch. Join the waitlist for updates on
+          availability and supported payment experiences.
         </motion.p>
 
         <motion.div
@@ -61,7 +61,7 @@ const ComingSoonSection = () => {
           >
             <img
               src={googlePlay}
-              alt="Get it on Google Play"
+              alt="Google Play availability updates"
               loading="lazy"
               decoding="async"
               className="h-12 w-auto md:h-14"
@@ -74,7 +74,7 @@ const ComingSoonSection = () => {
           >
             <img
               src={appStore}
-              alt="Download on the App Store"
+              alt="App Store availability updates"
               loading="lazy"
               decoding="async"
               className="h-12 w-auto md:h-14"
@@ -89,7 +89,7 @@ const ComingSoonSection = () => {
           transition={{ delay: 0.5 }}
           className="mt-4 text-center text-sm text-gray-400 md:text-left"
         >
-          Free to download · No subscription · Works offline from day one
+          Join the QPay waitlist for launch updates
         </motion.p>
       </motion.div>
 
@@ -185,7 +185,7 @@ const ComingSoonSection = () => {
           >
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="whitespace-nowrap text-xs font-bold text-gray-800">
-              Payment Confirmed
+              Payment Status
             </span>
           </motion.div>
         </div>

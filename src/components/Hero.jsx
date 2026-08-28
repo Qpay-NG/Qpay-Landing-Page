@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
 import { gsap } from "gsap";
 import { FiX } from "react-icons/fi";
 import { RiMenu3Line } from "react-icons/ri";
-import { RotatingLines } from "react-loader-spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
@@ -12,10 +10,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import Magnetic from "./Magnetic";
 import OptimizedPicture from "./OptimizedPicture";
-import { CONTACT_MODAL_EVENT } from "../utils/contactModal";
-
-const CONTACT_API_URL = import.meta.env.VITE_QPAY_CONTACT_API_URL;
-const CONTACT_API_KEY = import.meta.env.VITE_QPAY_CONTACT_API_KEY;
+import { openContactModal } from "../utils/contactModal";
 
 const heroImage = {
   avif:
@@ -38,22 +33,11 @@ const QLogo = ({ className = "" }) => (
   </div>
 );
 
-const Hero = ({ autoOpenContactModal = false }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [modalNotice, setModalNotice] = useState({
-    message: "",
-    isVisible: false,
-    type: "error",
-  });
 
   const heroRef = useRef(null);
-  const modalRef = useRef(null);
   const sideMenuRef = useRef(null);
-  const modalNoticeTimerRef = useRef(null);
 
   useEffect(() => {
     if (!heroRef.current) return undefined;
@@ -89,97 +73,6 @@ const Hero = ({ autoOpenContactModal = false }) => {
     return () => ctx.revert();
   }, []);
 
-  useEffect(() => {
-    const handleOpenContactModal = () => {
-      openModal();
-    };
-
-    window.addEventListener(CONTACT_MODAL_EVENT, handleOpenContactModal);
-
-    return () => {
-      window.removeEventListener(CONTACT_MODAL_EVENT, handleOpenContactModal);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!autoOpenContactModal) return;
-    openModal();
-  }, [autoOpenContactModal]);
-
-  useEffect(() => {
-    return () => {
-      if (modalNoticeTimerRef.current) {
-        clearTimeout(modalNoticeTimerRef.current);
-      }
-    };
-  }, []);
-
-  const showModalError = (message) => {
-    if (modalNoticeTimerRef.current) {
-      clearTimeout(modalNoticeTimerRef.current);
-    }
-
-    setModalNotice({ message, isVisible: true, type: "error" });
-
-    modalNoticeTimerRef.current = setTimeout(() => {
-      setModalNotice((currentNotice) => ({
-        ...currentNotice,
-        isVisible: false,
-      }));
-
-      modalNoticeTimerRef.current = setTimeout(() => {
-        setModalNotice({ message: "", isVisible: false, type: "error" });
-      }, 260);
-    }, 2600);
-  };
-
-  const showModalSuccess = (message) => {
-    if (modalNoticeTimerRef.current) {
-      clearTimeout(modalNoticeTimerRef.current);
-    }
-
-    setModalNotice({ message, isVisible: true, type: "success" });
-
-    modalNoticeTimerRef.current = setTimeout(() => {
-      closeModal();
-      setEmail("");
-      setMessage("");
-    }, 1300);
-  };
-
-  const openModal = () => {
-    setIsModalOpen(true);
-    requestAnimationFrame(() => {
-      if (!modalRef.current) return;
-      gsap.fromTo(
-        modalRef.current,
-        { scale: 0.92, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.35, ease: "power3.out" }
-      );
-    });
-  };
-
-  const closeModal = () => {
-    if (modalNoticeTimerRef.current) {
-      clearTimeout(modalNoticeTimerRef.current);
-      modalNoticeTimerRef.current = null;
-    }
-    setModalNotice({ message: "", isVisible: false, type: "error" });
-
-    if (!modalRef.current) {
-      setIsModalOpen(false);
-      return;
-    }
-
-    gsap.to(modalRef.current, {
-      scale: 0.92,
-      opacity: 0,
-      duration: 0.25,
-      ease: "power3.in",
-      onComplete: () => setIsModalOpen(false),
-    });
-  };
-
   const toggleMenu = () => {
     const nextOpen = !isMenuOpen;
     setIsMenuOpen(nextOpen);
@@ -189,64 +82,6 @@ const Hero = ({ autoOpenContactModal = false }) => {
       duration: 0.35,
       ease: nextOpen ? "power3.out" : "power3.in",
     });
-  };
-
-  const handleSendMessage = async () => {
-    const trimmedEmail = email.trim();
-    const question = message.trim();
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
-      showModalError("Please enter a valid email address.");
-      return;
-    }
-
-    if (!question) {
-      showModalError("Please enter a question.");
-      return;
-    }
-
-    if (question.length < 10) {
-      showModalError("Please enter at least 10 characters.");
-      return;
-    }
-
-    if (question.length > 2000) {
-      showModalError("Please keep your question under 2000 characters.");
-      return;
-    }
-
-    if (!CONTACT_API_URL || !CONTACT_API_KEY) {
-      showModalError("Contact form is not configured yet.");
-      return;
-    }
-
-    setIsLoading(true);
-
-    try {
-      const response = await fetch(CONTACT_API_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": `Bearer ${CONTACT_API_KEY}`,
-        },
-        body: JSON.stringify({
-          email: trimmedEmail,
-          question,
-        }),
-      });
-
-      const data = await response.json().catch(() => ({}));
-
-      if (response.ok) {
-        showModalSuccess(data.message || "Question submitted successfully.");
-      } else {
-        showModalError(data.message || "Failed to send message.");
-      }
-    } catch (error) {
-      showModalError(`An error occurred: ${error.message}`);
-    } finally {
-      setIsLoading(false);
-    }
   };
 
   const handleScrollToWaitlist = () => {
@@ -304,7 +139,7 @@ const Hero = ({ autoOpenContactModal = false }) => {
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={openModal}
+                onClick={openContactModal}
                 className="h-10 rounded-full bg-white px-5 text-sm font-semibold leading-none text-customOrange shadow-sm transition-all duration-300 hover:bg-gray-100 hover:shadow-md md:h-11"
               >
                 Contact Us
@@ -357,7 +192,7 @@ const Hero = ({ autoOpenContactModal = false }) => {
                 onClick={() => handleScrollToSection("coming-soon")}
                 className="block w-full border-b border-white/10 py-4 text-left font-medium"
               >
-                Download
+                Join Waitlist
               </button>
             </li>
           </ul>
@@ -394,7 +229,7 @@ const Hero = ({ autoOpenContactModal = false }) => {
             className="font-heading text-[clamp(2.55rem,13vw,3.55rem)] leading-[0.95] tracking-[-0.05em] text-white sm:text-[clamp(3.25rem,9vw,4rem)] md:text-[4.15rem] md:leading-[0.92] lg:text-[4.75rem] xl:text-[5.5rem]"
             style={{ textShadow: "0 2px 20px rgba(249,84,29,0.35)" }}
           >
-            Pay Anywhere.
+            Low connectivity? Keep moving.
             <br />
             <span className="inline-block text-white/80">Even Offline.</span>
           </h1>
@@ -403,9 +238,10 @@ const Hero = ({ autoOpenContactModal = false }) => {
             data-hero="copy"
             className="mt-4 max-w-[34rem] text-[0.95rem] leading-relaxed text-white/78 sm:text-base md:mt-5 md:text-[1.02rem] lg:mt-6 lg:max-w-xl lg:text-lg"
           >
-            Generate secure QR payments on your phone without internet.
-            Merchants scan, payment confirms fast, and everything feels simple
-            even when you&apos;re completely offline.
+            Generate secure QR payment instructions on your phone when
+            connectivity is limited. Merchants scan, and the payment
+            instruction can then be processed through the relevant payment
+            infrastructure.
           </p>
 
           <div
@@ -418,7 +254,7 @@ const Hero = ({ autoOpenContactModal = false }) => {
               className="h-9 w-9 md:h-10 md:w-10"
             />
             <span className="text-sm font-medium text-white md:text-base">
-              Active user community
+              Built for everyday payments
             </span>
           </div>
 
@@ -433,7 +269,7 @@ const Hero = ({ autoOpenContactModal = false }) => {
                 onClick={handleScrollToWaitlist}
                 className="w-full rounded-full bg-white px-7 py-4 text-base font-bold text-customOrange shadow-lg transition-all duration-300 hover:bg-gray-100 hover:shadow-xl sm:w-auto"
               >
-                Start Paying Offline Today
+                Join the QPay Waitlist
               </motion.button>
             </Magnetic>
 
@@ -467,7 +303,7 @@ const Hero = ({ autoOpenContactModal = false }) => {
                     avif={heroImage.avif}
                     webp={heroImage.webp}
                     src="/hero-qpay-users.png"
-                    alt="QPay Offline Payment UI"
+                    alt="QPay payment interface preview"
                     width="1842"
                     height="2304"
                     loading="eager"
@@ -482,118 +318,22 @@ const Hero = ({ autoOpenContactModal = false }) => {
 
             <div className="absolute -left-1 bottom-[13%] rounded-2xl border border-white/14 bg-white/12 px-2.5 py-2 shadow-[0_12px_30px_rgba(0,0,0,0.16)] backdrop-blur-sm sm:left-0 sm:px-4 sm:py-3 md:left-[-8px] md:bottom-[12%] md:px-3 md:py-2 lg:left-0 lg:bottom-[14%] lg:px-4 lg:py-3">
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/65">
-                No Network
+                Limited Connectivity
               </p>
               <p className="mt-1 text-xs font-bold text-white sm:text-sm md:text-[0.95rem] lg:text-base">
-                QR still generates instantly
+                QR payment details can be prepared
               </p>
             </div>
 
             <div className="absolute -right-1 top-[12%] rounded-2xl border border-white/14 bg-white px-2.5 py-2 text-customOrange shadow-[0_12px_30px_rgba(0,0,0,0.16)] sm:right-1 sm:px-4 sm:py-3 md:right-[-8px] md:top-[10%] md:px-3 md:py-2 lg:right-1 lg:top-[12%] lg:px-4 lg:py-3">
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-customOrange/70">
-                Confirmed
+                Payment Status
               </p>
-              <p className="mt-1 text-xs font-bold sm:text-sm md:text-[0.95rem] lg:text-base">Under 3 seconds</p>
+              <p className="mt-1 text-xs font-bold sm:text-sm md:text-[0.95rem] lg:text-base">Processing follows infrastructure</p>
             </div>
           </div>
         </div>
       </div>
-
-      {isModalOpen && createPortal(
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6">
-          <div
-            className="absolute inset-0 bg-slate-950/70 backdrop-blur-md"
-            onClick={closeModal}
-          ></div>
-          <div
-            ref={modalRef}
-            className="relative z-10 w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/70 bg-white shadow-[0_32px_90px_rgba(15,23,42,0.32),0_0_0_1px_rgba(255,255,255,0.55)]"
-          >
-            <div
-              role="alert"
-              aria-live="polite"
-              className={`pointer-events-none absolute left-1/2 top-4 z-30 w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 rounded-2xl border bg-white/95 px-4 py-3 text-center text-sm font-semibold shadow-[0_18px_48px_rgba(15,23,42,0.22)] backdrop-blur-md transition-all duration-300 ease-out ${
-                modalNotice.type === "success"
-                  ? "border-emerald-100 text-emerald-600"
-                  : "border-red-100 text-red-600"
-              } ${
-                modalNotice.message && modalNotice.isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "-translate-y-2 opacity-0"
-              }`}
-            >
-              {modalNotice.message}
-            </div>
-
-            <div className="relative overflow-hidden bg-[radial-gradient(circle_at_20%_10%,rgba(255,255,255,0.35),transparent_28%),linear-gradient(135deg,#F9541D_0%,#FF6A2A_48%,#E74412_100%)] px-6 pb-8 pt-7 text-white sm:px-8 sm:pb-9 sm:pt-8">
-              <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-white/20 blur-3xl" />
-              <div className="pointer-events-none absolute -bottom-24 left-8 h-44 w-44 rounded-full bg-black/15 blur-3xl" />
-              <button
-                onClick={closeModal}
-                aria-label="Close contact form"
-                className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/15 text-white backdrop-blur-sm transition-colors hover:bg-white/25"
-              >
-                <FiX size={20} />
-              </button>
-              <p className="relative z-10 mb-3 text-center text-[11px] font-bold uppercase tracking-[0.28em] text-white/75">
-                Contact QPay
-              </p>
-              <h2 className="relative z-10 mx-auto max-w-md text-center font-heading text-3xl font-bold leading-tight sm:text-4xl">
-                Have a Question or Suggestion?
-              </h2>
-              <p className="relative z-10 mx-auto mt-4 max-w-sm text-center text-sm leading-relaxed text-white/78 sm:text-base">
-                Send us a note and we&apos;ll get back to you as soon as possible.
-              </p>
-            </div>
-
-            <div className="space-y-5 p-6 sm:p-8">
-              <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  placeholder="you@example.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="h-12 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-customOrange focus:bg-white focus:ring-4 focus:ring-orange-100"
-                />
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
-                  Question
-                </label>
-                <textarea
-                  placeholder="Write your question..."
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="h-40 w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-relaxed text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-customOrange focus:bg-white focus:ring-4 focus:ring-orange-100 sm:h-44"
-                />
-              </div>
-
-              <button
-                onClick={handleSendMessage}
-                className="flex h-12 w-full items-center justify-center rounded-full bg-customOrange px-6 text-sm font-bold text-white shadow-[0_14px_32px_rgba(249,84,29,0.28)] transition-all hover:-translate-y-0.5 hover:bg-orange-600 hover:shadow-[0_18px_38px_rgba(249,84,29,0.34)] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
-                disabled={isLoading}
-              >
-                {isLoading ? (
-                  <RotatingLines
-                    strokeColor="white"
-                    strokeWidth="5"
-                    animationDuration="0.75"
-                    width="24"
-                    visible={true}
-                  />
-                ) : (
-                  "Send Message"
-                )}
-              </button>
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
 
     </section>
   );

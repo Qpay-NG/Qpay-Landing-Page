@@ -29,7 +29,7 @@ const screens = [
   },
   { ...screenStep1, label: "Enter Amount" },
   { ...screenStep2, label: "Merchant QR" },
-  { ...screenStep3, label: "Payment Confirmed" },
+  { ...screenStep3, label: "Payment Status" },
   {
     src: "/lean/Default1.png",
     avif: "/optimized/screen-merchant-dashboard.avif",
@@ -39,11 +39,11 @@ const screens = [
 ];
 
 const pills = [
-  "Bank-Grade Security",
-  "Instant QR",
-  "No Bank App Needed",
-  "Works Everywhere",
-  "Zero Connectivity",
+  "Secure QR payment experiences",
+  "QR prepared on device",
+  "Use your QPay account",
+  "Designed for everyday payments",
+  "Designed for low connectivity",
 ];
 
 const AppShowcase = () => {
@@ -150,11 +150,13 @@ const AppShowcase = () => {
           <h2 className="font-heading text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl">
             Every Screen.{" "}
             <span style={{ color: "rgba(255,255,255,0.75)" }}>
-              Offline Ready.
+              Built for Low Connectivity.
             </span>
           </h2>
           <p className="font-body mx-auto mt-3 max-w-2xl px-4 text-sm font-medium leading-relaxed text-white/70 sm:text-base md:mt-4 md:text-lg lg:text-xl">
-            From onboarding to instant payment, QPay works completely offline.
+            From onboarding to payment instructions, QPay supports payment
+            preparation when connectivity is limited. Final processing follows
+            the relevant payment infrastructure.
           </p>
         </div>
 

@@ -16,7 +16,7 @@ const policySections = [
     definitions: [
       {
         term: 'Company',
-        text: '(referred to as either "the Company", "We", "Us" or "Our" in this Cookies Policy) refers to Qpay.',
+        text: '(referred to as either "the Company", "We", "Us" or "Our" in this Cookies Policy) refers to Modulo Technologies LTD, trading as QPay.',
       },
       {
         term: 'Cookies',

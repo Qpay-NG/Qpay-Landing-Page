@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import CookiesPolicyPage from './components/CookiesPolicyPage'
 import PrivacyPolicyPage from './components/PrivacyPolicyPage'
 import FoundersPage from './components/FoundersPage'
+import ContactModal from './components/ContactModal'
 
 function App() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
@@ -27,7 +28,7 @@ function App() {
         <FoundersPage />
       ) : (
         <>
-          <Hero autoOpenContactModal={isContactUsPage} />
+          <Hero />
           <AboutQpay />
           <Testimonials />
           <AppShowcase />
@@ -36,6 +37,10 @@ function App() {
         </>
       )}
       <Footer />
+      <ContactModal
+        variant={isPrivacyPolicyPage ? 'privacy' : 'contact'}
+        autoOpen={isContactUsPage}
+      />
     </div>
   )
 }
