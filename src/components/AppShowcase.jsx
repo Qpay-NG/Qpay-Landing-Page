@@ -156,7 +156,7 @@ const AppShowcase = () => {
           <p className="font-body mx-auto mt-3 max-w-2xl px-4 text-sm font-medium leading-relaxed text-white/70 sm:text-base md:mt-4 md:text-lg lg:text-xl">
             From onboarding to payment instructions, QPay supports payment
             preparation when connectivity is limited. Final processing follows
-            the relevant payment infrastructure.
+            the relevant payment network.
           </p>
         </div>
 

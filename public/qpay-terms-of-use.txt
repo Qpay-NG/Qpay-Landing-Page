@@ -1,0 +1,512 @@
+QPAY TERMS OF USE
+
+Effective Date: May 20, 2026
+Last Updated: May 20, 2026
+
+These Terms of Use ("Terms") govern your access to and use of the QPay mobile application, website, payment services and related products and services collectively referred to as the "QPay Services."
+
+These Terms constitute a legally binding agreement between you and Modulo Technologies LTD ("QPay", "we", "us" or "our").
+
+By creating a QPay account, accessing the QPay Services, or continuing to use the QPay Services, you confirm that you have read, understood and agreed to these Terms.
+
+If you do not agree to these Terms, you must not create or use a QPay account.
+
+1. ABOUT QPAY
+
+QPay is a financial technology platform that enables users to make and receive payments, including payments initiated through QR codes, and access related financial services through the QPay application.
+
+Certain regulated financial services available through QPay may be provided by appropriately licensed financial institutions and payment service providers.
+
+QPay currently uses Anchor as an infrastructure partner for certain account, ledger and payment services.
+
+Where a service is provided by a regulated third party, additional terms imposed by that provider may apply.
+
+QPay is not a bank and does not represent itself as one.
+
+2. ELIGIBILITY
+
+To create and maintain a QPay account, you must:
+
+a. be at least 18 years old;
+b. provide accurate, complete and current information;
+c. provide a valid Nigerian telephone number where required;
+d. successfully complete QPay's applicable identity verification and Know Your Customer ("KYC") requirements;
+e. satisfy applicable regulatory and compliance requirements; and
+f. use your account only for lawful purposes.
+
+QPay may request additional information or documentation at any time where required for identity verification, fraud prevention, regulatory compliance or account security.
+
+3. ACCOUNT REGISTRATION
+
+You may open a QPay account by downloading the QPay mobile application and completing the registration process.
+
+You may be required to provide information including your:
+
+* full legal name;
+* date of birth;
+* telephone number;
+* email address;
+* residential address;
+* Bank Verification Number ("BVN");
+* National Identification Number ("NIN");
+* government-issued identification; and
+* other information reasonably required for verification or regulatory compliance.
+
+QPay may use third-party identity verification providers to verify information submitted during onboarding.
+
+Providing false, misleading, fraudulent or incomplete information may result in your application being rejected or your account being restricted, suspended or terminated.
+
+4. ONE ACCOUNT PER CUSTOMER
+
+Unless expressly permitted by QPay, each individual may maintain only one personal QPay account.
+
+You may not create multiple accounts to circumvent transaction limits, promotional restrictions, compliance requirements, account restrictions or any other QPay control.
+
+Separate products or profiles may subsequently be made available for businesses or merchants.
+
+5. IDENTITY VERIFICATION AND KYC
+
+By creating or maintaining a QPay account, you authorise QPay and its authorised service providers to verify information you provide.
+
+Verification may include checking information against government, financial institution, identity verification and other authorised databases.
+
+QPay may conduct or facilitate:
+
+* NIN verification;
+* BVN verification;
+* document verification;
+* facial or biometric verification where applicable;
+* telephone number verification;
+* sanctions screening;
+* politically exposed person screening;
+* fraud screening; and
+* other AML/CFT checks required by applicable law.
+
+QPay may request additional information after account opening.
+
+Failure to provide requested information may result in restrictions being placed on your account.
+
+6. YOUR QPAY ACCOUNT
+
+Following successful onboarding and verification, you may be provided with access to payment functionality through QPay.
+
+Where applicable, account numbers or virtual accounts displayed within QPay may be issued or maintained through QPay's regulated banking or financial infrastructure partners.
+
+The underlying financial account infrastructure may therefore be provided by a third party rather than directly by QPay.
+
+Your available balance and transaction information will be displayed within the QPay application.
+
+7. CUSTOMER FUNDS
+
+QPay does not acquire ownership of your funds merely because you use QPay.
+
+Where customer funds are maintained within an account provided by a regulated financial institution or infrastructure partner, those funds are held within the applicable financial infrastructure provided by that partner.
+
+QPay may provide the technology and instructions necessary to initiate authorised transactions but does not have unrestricted rights to use customer funds for QPay's own purposes.
+
+The precise safeguarding, custody and settlement arrangements applicable to your funds may depend on the financial institution providing the underlying account.
+
+8. FUNDING YOUR ACCOUNT
+
+Depending on the services available to you, you may fund your QPay account using supported methods including:
+
+* NIP bank transfers;
+* book transfers;
+* card funding, where available; and
+* other methods introduced by QPay.
+
+Available funding methods may change.
+
+QPay may impose funding limits, verification requirements or other controls for security, compliance or operational reasons.
+
+9. QR PAYMENTS
+
+QPay enables supported payments to be initiated through QR codes.
+
+Depending on the payment flow, a QR code may represent information necessary to identify a customer, merchant, transaction or payment instruction.
+
+Before authorising a transaction, you are responsible for checking the relevant transaction details displayed to you.
+
+Once you authorise a payment, QPay may submit the payment instruction for processing.
+
+A transaction should not be considered successful solely because a QR code has been scanned.
+
+A payment is considered completed when QPay or the relevant payment infrastructure confirms successful processing.
+
+10. PAYMENT AUTHORISATION
+
+By confirming a payment within QPay, you authorise QPay and its payment partners to process the corresponding payment instruction.
+
+QPay may require additional authentication, including:
+
+* PIN;
+* password;
+* OTP;
+* biometric authentication;
+* device authentication; or
+* another security mechanism.
+
+You must not authorise a payment unless you have verified the transaction details.
+
+11. TRANSACTION STATUS
+
+Transactions may appear as:
+
+* pending;
+* successful;
+* failed;
+* reversed;
+* cancelled; or
+* another status displayed within QPay.
+
+A transaction displayed as pending has not necessarily completed.
+
+If a transaction fails after your account has been debited, QPay and/or its payment partners will process any applicable reversal in accordance with the relevant payment network and regulatory requirements.
+
+12. TRANSACTION LIMITS
+
+QPay may establish limits on:
+
+* individual transactions;
+* daily transactions;
+* monthly transactions;
+* account funding;
+* withdrawals;
+* transfers; and
+* other account activities.
+
+Limits may vary depending on your verification level, account type, risk profile and regulatory requirements.
+
+QPay may change applicable limits where necessary for compliance, fraud prevention, risk management or operational reasons.
+
+13. FEES
+
+QPay may charge fees for certain services.
+
+For applicable QR payment transactions, QPay currently charges a 2.5% transaction fee on successfully completed QR payments.
+
+The applicable fee will be disclosed to the relevant user before or as part of the transaction process where required.
+
+QPay may introduce or modify fees in the future.
+
+Where a fee changes materially, QPay will provide notice as required by applicable law before the new fee becomes effective.
+
+Fees charged by banks, card issuers, telecommunications providers or other third parties may be separate from QPay's fees.
+
+14. FAILED AND DUPLICATE TRANSACTIONS
+
+QPay uses technical controls, including idempotency mechanisms where applicable, to reduce the risk of duplicate payment processing.
+
+However, network interruptions, third-party failures and other circumstances may affect transaction processing.
+
+If you believe you have been charged more than once for the same transaction, you should report the transaction to QPay immediately through the available customer support channels.
+
+15. REFUNDS AND REVERSALS
+
+A refund, reversal or transaction cancellation may be available depending on:
+
+* the transaction status;
+* payment method;
+* merchant;
+* applicable payment network rules;
+* QPay policies;
+* partner requirements; and
+* applicable law.
+
+A successfully completed transfer cannot necessarily be cancelled merely because the sender changes their mind.
+
+Where a payment has been sent to an incorrect recipient because the sender entered or confirmed incorrect information, QPay cannot guarantee recovery.
+
+16. MERCHANT PAYMENTS
+
+Merchants accepting QPay payments must ensure that:
+
+* goods and services offered are lawful;
+* transaction descriptions are accurate;
+* customers are not deliberately misled;
+* QPay is not used for fraudulent activity;
+* applicable consumer protection obligations are followed; and
+* requested compliance information is provided.
+
+QPay may suspend merchant payment functionality where suspicious or prohibited activity is detected.
+
+Separate QPay Merchant Terms may apply to merchants.
+
+17. ACCOUNT SECURITY
+
+You are responsible for maintaining the security of your QPay account and devices.
+
+You must:
+
+* protect your password and PIN;
+* never disclose an OTP to another person;
+* secure devices used to access QPay;
+* notify QPay immediately if you suspect unauthorised access;
+* ensure biometric credentials stored on your device belong only to authorised users; and
+* keep your contact information current.
+
+QPay will never ask you to disclose your complete password, PIN or OTP through unsolicited communications.
+
+18. UNAUTHORISED TRANSACTIONS
+
+If you believe your QPay account has been compromised or a transaction was conducted without your authorisation, you must notify QPay as soon as reasonably possible.
+
+QPay may temporarily restrict your account while investigating suspected unauthorised activity.
+
+You may be required to provide information reasonably necessary to investigate the transaction.
+
+19. TRANSACTION MONITORING
+
+QPay and its financial infrastructure partners may monitor transactions to identify suspected:
+
+* fraud;
+* money laundering;
+* terrorist financing;
+* proliferation financing;
+* sanctions violations;
+* account abuse;
+* unusual transaction patterns; and
+* other unlawful activity.
+
+Transactions may be automatically screened using transaction monitoring systems and internal risk controls.
+
+QPay may review, delay, reject or restrict transactions where required for security, compliance or legal reasons.
+
+Nigeria's regulatory framework specifically addresses payment-system risk, security, electronic payment channels and QR payments. CBN also announced baseline standards for automated AML/CFT/CPF monitoring solutions in 2026.
+
+20. PROHIBITED USE
+
+You must not use QPay to:
+
+* commit fraud;
+* launder proceeds of crime;
+* finance terrorism;
+* evade sanctions;
+* impersonate another person;
+* operate an account using false identity information;
+* process transactions relating to unlawful goods or services;
+* exploit technical vulnerabilities;
+* interfere with QPay's infrastructure;
+* circumvent transaction or account limits;
+* artificially manipulate transactions;
+* misuse QR codes;
+* conduct transactions on behalf of another person where prohibited; or
+* engage in any activity prohibited by Nigerian law.
+
+QPay may restrict accounts associated with suspected prohibited activity.
+
+21. ACCOUNT RESTRICTIONS
+
+QPay may temporarily restrict some or all account functionality where reasonably necessary because of:
+
+* suspected fraud;
+* suspicious transactions;
+* incomplete KYC;
+* sanctions concerns;
+* security incidents;
+* regulatory requirements;
+* court orders;
+* requests from competent authorities;
+* disputes concerning account ownership;
+* breach of these Terms; or
+* risks to QPay, customers or payment partners.
+
+Where legally permitted, QPay will provide appropriate information regarding restrictions.
+
+22. SUSPENSION AND TERMINATION
+
+You may request closure of your QPay account subject to outstanding transactions, investigations, obligations or regulatory retention requirements.
+
+QPay may suspend or terminate your access where you materially breach these Terms, use QPay unlawfully, create unacceptable security or compliance risk, or where QPay is required to do so by law or a financial partner.
+
+Closing an account does not eliminate obligations arising before closure.
+
+23. THIRD-PARTY SERVICE PROVIDERS
+
+QPay relies on third-party providers to deliver portions of the QPay Services.
+
+These may include:
+
+* financial institutions;
+* payment processors;
+* banking infrastructure providers;
+* identity verification providers;
+* telecommunications providers;
+* cloud infrastructure providers;
+* fraud prevention providers; and
+* other technology providers.
+
+QPay currently uses Anchor for certain underlying account, ledger and payment infrastructure.
+
+Use of certain services may therefore be subject to additional terms or requirements imposed by the relevant regulated provider.
+
+24. SERVICE AVAILABILITY
+
+QPay aims to provide reliable access to its services but does not guarantee uninterrupted availability.
+
+Services may temporarily become unavailable because of:
+
+* maintenance;
+* internet outages;
+* telecommunications failures;
+* bank downtime;
+* NIP or payment network downtime;
+* third-party provider outages;
+* security incidents;
+* force majeure events; or
+* circumstances outside QPay's reasonable control.
+
+Where practical, QPay will take reasonable steps to restore affected services.
+
+25. PRIVACY AND PERSONAL DATA
+
+QPay processes personal information in accordance with its Privacy Policy and applicable Nigerian data protection requirements.
+
+Personal information processed by QPay may include:
+
+* identity information;
+* contact information;
+* date of birth;
+* residential address;
+* identification numbers;
+* account information;
+* device information;
+* IP address;
+* transaction information; and
+* information required for compliance and fraud prevention.
+
+QPay will implement appropriate technical and organisational measures designed to protect personal information.
+
+The Privacy Policy should separately address QPay's obligations under the Nigeria Data Protection Act 2023 and applicable guidance issued by the Nigeria Data Protection Commission.
+
+26. ELECTRONIC COMMUNICATIONS
+
+By creating a QPay account, you agree that QPay may provide agreements, disclosures, notices, statements, transaction information and other communications electronically, subject to applicable law.
+
+Electronic communications may be delivered through:
+
+* the QPay application;
+* push notifications;
+* email;
+* SMS; or
+* other electronic channels associated with your account.
+
+You are responsible for keeping your contact information current.
+
+Your consent to electronic communications is further governed by the QPay Electronic Communications and E-Sign Consent Agreement.
+
+27. CUSTOMER SUPPORT
+
+Customers may contact QPay through the support channels made available within the QPay application or through QPay's official support email.
+
+QPay's standard customer support hours are:
+Monday to Friday, 9:00 AM to 5:00 PM WAT, excluding Nigerian public holidays.
+
+The QPay platform may remain available outside customer support hours.
+
+28. COMPLAINTS
+
+If you experience a problem with QPay, you should first contact QPay Customer Support.
+
+QPay will record and investigate complaints in accordance with its complaints handling procedures and applicable requirements.
+
+Where appropriate, complaints may be escalated internally or to the regulated financial institution responsible for the underlying service.
+
+Customers may have additional escalation rights under applicable Nigerian financial services regulations.
+
+CBN's consumer-protection framework requires regulated financial institutions to maintain accessible complaints and redress mechanisms. CBN also provides an escalation mechanism where an eligible complaint against a regulated financial institution has not been resolved within the applicable timeframe.
+
+29. INTELLECTUAL PROPERTY
+
+QPay and its licensors retain all applicable intellectual property rights in the QPay platform, including its:
+
+* software;
+* application;
+* designs;
+* branding;
+* trademarks;
+* logos;
+* interfaces;
+* documentation; and
+* proprietary technology.
+
+These Terms do not transfer ownership of QPay intellectual property to you.
+
+You receive a limited, revocable, non-exclusive and non-transferable right to use the QPay application for its intended purpose.
+
+30. LIMITATION OF LIABILITY
+
+To the extent permitted by applicable law, QPay will not be liable for indirect, incidental, consequential or special losses arising from circumstances outside QPay's reasonable control.
+
+Nothing in these Terms excludes or limits any liability that cannot legally be excluded or limited under Nigerian law.
+
+Nothing in these Terms removes statutory rights available to consumers.
+
+31. YOUR RESPONSIBILITY
+
+You are responsible for losses resulting from your fraudulent conduct, intentional misconduct or material breach of these Terms, subject to applicable law.
+
+You are responsible for ensuring that information supplied to QPay is accurate and that payment details are checked before a transaction is authorised.
+
+32. CHANGES TO QPAY
+
+QPay may introduce, modify, suspend or discontinue features where reasonably necessary.
+
+Material changes affecting customers will be communicated where required by applicable law.
+
+The availability of particular financial products may depend on regulatory approval, infrastructure partners, geographic location and account eligibility.
+
+33. CHANGES TO THESE TERMS
+
+QPay may update these Terms from time to time.
+
+Where changes materially affect your rights or obligations, QPay will provide appropriate advance notice where required by law.
+
+The latest Terms will be made available through the QPay application and/or QPay website.
+
+The "Last Updated" date at the beginning of these Terms indicates when the Terms were most recently revised.
+
+34. INTERNATIONAL EXPANSION
+
+QPay currently provides its primary services within Nigeria.
+
+QPay may expand into additional countries in the future.
+
+Availability of QPay in another jurisdiction does not automatically mean that all Nigerian QPay products will be available in that jurisdiction.
+
+Customers relocating outside Nigeria may only continue using regulated QPay financial services where QPay and its applicable partners are authorised to provide those services in the relevant jurisdiction.
+
+35. GOVERNING LAW
+
+These Terms are governed by the laws of the Federal Republic of Nigeria, without prejudice to any mandatory consumer rights that may apply.
+
+Any dispute arising from these Terms will be handled through the applicable complaints and dispute resolution procedures before further legal remedies are pursued where appropriate.
+
+36. SEVERABILITY
+
+If any provision of these Terms is determined to be invalid or unenforceable, the remaining provisions will continue in effect to the extent permitted by law.
+
+37. NO WAIVER
+
+If QPay does not immediately enforce a provision of these Terms, this does not constitute a waiver of QPay's right to enforce that provision later.
+
+38. ENTIRE AGREEMENT
+
+These Terms, together with QPay's:
+
+* Privacy Policy
+* Electronic Communications and E-Sign Consent Agreement
+* Acceptable Use Policy
+* Complaints Policy
+* Merchant Terms, where applicable
+* and any other product-specific terms presented to you constitute the applicable agreement governing your use of QPay.
+
+39. CONTACT US
+
+Questions, complaints or concerns regarding these Terms may be directed to:
+
+QPay
+Legal entity: MODULO TECHNOLOGIES LTD
+RC Number: 9636999
+Support Email: support@qpay-ng.com
+Website: https://qpay-ng.com

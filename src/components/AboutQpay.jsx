@@ -449,8 +449,8 @@ const AboutQpay = () => {
           </h2>
           <p className="font-body mx-auto max-w-xl text-base text-gray-500 md:text-lg">
             QPay is designed to support payment initiation when connectivity is
-            limited. Payment instructions can be securely captured and
-            processed through QPay&apos;s payment infrastructure.
+            limited. Payment instructions can be securely captured and sent for
+            processing.
           </p>
         </div>
 
@@ -552,7 +552,7 @@ const AboutQpay = () => {
                     <p className="mb-3 max-w-[12rem] text-[11.5px] leading-[1.55] text-slate-500 min-[390px]:max-w-[13rem] min-[390px]:text-xs sm:max-w-[16rem] sm:text-[1.05rem] sm:leading-[1.45] md:mb-4 md:max-w-sm md:text-[1rem] lg:mb-6 lg:text-lg">
                       They scan your code, and the payment instruction is
                       submitted for processing. Final payment status follows
-                      confirmation from the relevant payment infrastructure.
+                      transaction confirmation.
                     </p>
                     <div className="mb-3 w-fit rounded-xl border-l-[3px] border-customOrange bg-[#FFF6F0] px-2.5 py-2 sm:px-4 sm:py-3 md:mb-4 md:px-4 md:py-2.5 lg:mb-6 lg:rounded-r-xl lg:px-4 lg:py-3">
                       <span className="text-[10.5px] font-semibold text-customOrange min-[390px]:text-[11px] sm:text-sm md:text-xs lg:text-sm">
@@ -676,7 +676,7 @@ const AboutQpay = () => {
             <p className="font-body mb-6 flex-grow text-sm font-medium leading-relaxed text-gray-500 md:mb-8 md:text-base">
               Out of data, poor signal, no WiFi? QPay can prepare payment
               details on your device when connectivity is limited. Final
-              processing follows the relevant payment infrastructure.
+              processing follows the payment network.
             </p>
             <div
               className="group relative mt-4 flex min-h-[200px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/5 bg-[#0A0A0B] p-5 shadow-2xl md:min-h-[260px] md:rounded-3xl md:p-8"
@@ -749,8 +749,8 @@ const AboutQpay = () => {
             </h3>
             <p className="font-body mb-6 flex-grow text-sm font-medium leading-relaxed text-gray-500 md:mb-8 md:text-base">
               Scan to submit the payment instruction. QPay keeps the flow clear
-              while final processing and confirmation follow the relevant
-              payment infrastructure.
+              while final processing and confirmation follow the transaction
+              flow.
             </p>
             <div className="group relative mt-4 flex min-h-[180px] flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500 via-customOrange to-orange-600 p-5 shadow-2xl md:min-h-[200px] md:p-8">
               <div className="pointer-events-none absolute inset-0 opacity-20">
@@ -820,8 +820,7 @@ const AboutQpay = () => {
             </h3>
             <p className="font-body mb-6 flex-grow text-sm font-medium leading-relaxed text-gray-500 md:mb-8 md:text-base">
               QPay is designed to reduce payment friction when connectivity is
-              challenging. Confirmation follows processing through the relevant
-              payment infrastructure.
+              challenging. Confirmation follows transaction processing.
             </p>
             <div className="group relative mt-4 flex min-h-[180px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-orange-100 bg-gradient-to-br from-gray-50 via-orange-50/30 to-white p-5 shadow-xl md:min-h-[200px] md:p-8">
               <div className="pointer-events-none absolute inset-0 overflow-hidden">

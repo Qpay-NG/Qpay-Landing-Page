@@ -84,13 +84,6 @@ const Hero = () => {
     });
   };
 
-  const handleScrollToWaitlist = () => {
-    const waitlistSection = document.getElementById("coming-soon");
-    if (waitlistSection) {
-      waitlistSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const handleScrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -189,7 +182,10 @@ const Hero = () => {
             </li>
             <li>
               <button
-                onClick={() => handleScrollToSection("coming-soon")}
+                onClick={() => {
+                  openContactModal("waitlist");
+                  toggleMenu();
+                }}
                 className="block w-full border-b border-white/10 py-4 text-left font-medium"
               >
                 Join Waitlist
@@ -240,8 +236,7 @@ const Hero = () => {
           >
             Generate secure QR payment instructions on your phone when
             connectivity is limited. Merchants scan, and the payment
-            instruction can then be processed through the relevant payment
-            infrastructure.
+            instruction is then submitted for processing.
           </p>
 
           <div
@@ -266,7 +261,7 @@ const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={handleScrollToWaitlist}
+                onClick={() => openContactModal("waitlist")}
                 className="w-full rounded-full bg-white px-7 py-4 text-base font-bold text-customOrange shadow-lg transition-all duration-300 hover:bg-gray-100 hover:shadow-xl sm:w-auto"
               >
                 Join the QPay Waitlist
@@ -329,7 +324,7 @@ const Hero = () => {
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-customOrange/70">
                 Payment Status
               </p>
-              <p className="mt-1 text-xs font-bold sm:text-sm md:text-[0.95rem] lg:text-base">Processing follows infrastructure</p>
+              <p className="mt-1 text-xs font-bold sm:text-sm md:text-[0.95rem] lg:text-base">Designed for everyone</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { openContactModal } from '../utils/contactModal';
 
 const footerColumns = [
   {
@@ -8,7 +9,7 @@ const footerColumns = [
     links: [
       { label: 'How It Works', href: '/#how-it-works' },
       { label: 'Security', href: '/#app-showcase' },
-      { label: 'Join the Waitlist', href: '/#coming-soon' },
+      { label: 'Join the Waitlist', onClick: () => openContactModal('waitlist') },
     ],
   },
   {
@@ -24,6 +25,7 @@ const footerColumns = [
     links: [
       { label: 'Privacy Policy', href: '/privacy-policy' },
       { label: 'Cookies Policy', href: '/cookies-policy' },
+      { label: 'Terms of Use', href: '/terms-of-use' },
     ],
   },
 ];
@@ -92,9 +94,15 @@ const Footer = () => {
 
               <div className="mt-7 flex flex-col gap-5">
                 {column.links.map((link) => (
-                  <a key={link.label} href={link.href} className={linkClassName}>
-                    {link.label}
-                  </a>
+                  link.onClick ? (
+                    <button key={link.label} type="button" onClick={link.onClick} className={linkClassName}>
+                      {link.label}
+                    </button>
+                  ) : (
+                    <a key={link.label} href={link.href} className={linkClassName}>
+                      {link.label}
+                    </a>
+                  )
                 ))}
               </div>
             </nav>

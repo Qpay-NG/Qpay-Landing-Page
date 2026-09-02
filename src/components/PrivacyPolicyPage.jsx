@@ -78,7 +78,7 @@ function PrivacyPolicyPage() {
           <article className="min-w-0 rounded-lg border border-slate-200 bg-white px-6 py-10 shadow-sm sm:px-8 md:px-12 md:py-12">
             <div className="space-y-8 text-[15px] leading-8 text-slate-700 sm:text-[16px] sm:leading-9">
               <p>
-                This Privacy Notice for <strong>Modulo Technologies LTD, trading as QPay</strong> ('<strong>we</strong>', '<strong>us</strong>', or '<strong>our</strong>'), describes how and why we might access, collect, store, use, and/or share ('<strong>process</strong>') your personal information when you use our services ('<strong>Services</strong>'), including when you:
+                This Privacy Notice for <strong>Modulo Technologies LTD, trading as QPay</strong> (&apos;<strong>we</strong>&apos;, &apos;<strong>us</strong>&apos;, or &apos;<strong>our</strong>&apos;), describes how and why we might access, collect, store, use, and/or share (&apos;<strong>process</strong>&apos;) your personal information when you use our services (&apos;<strong>Services</strong>&apos;), including when you:
               </p>
 
               <ul className={listClass}>
@@ -158,8 +158,8 @@ function PrivacyPolicyPage() {
                     <strong className="text-slate-950">
                       Do we process any sensitive personal information?
                     </strong>{' '}
-                    Some of the information may be considered 'special' or
-                    'sensitive' in certain jurisdictions, for example your
+                    Some of the information may be considered &apos;special&apos; or
+                    &apos;sensitive&apos; in certain jurisdictions, for example your
                     racial or ethnic origins, sexual orientation, and religious
                     beliefs. We may process sensitive personal information when
                     necessary with your consent or as otherwise permitted by

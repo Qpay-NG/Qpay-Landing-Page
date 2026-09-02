@@ -22,17 +22,17 @@ const FAQs = () => {
     {
       icon: faCircleInfo,
       question: "What is QPay?",
-      answer: "QPay is a payment app that helps you initiate payments when customer connectivity is limited. You generate a QR code on your phone, and the merchant scans it. Payment instructions can then be processed through QPay's payment infrastructure.",
+      answer: "QPay is a payment app that helps you initiate payments when customer connectivity is limited. You generate a QR code on your phone, and the merchant scans it. The payment instruction is then submitted for processing.",
     },
     {
       icon: faQrcode,
       question: "How does the offline QR code work?",
-      answer: "You open QPay, enter the amount, and your phone creates a secure QR code on device. The merchant scans it with their QPay app, and the payment instruction can then be processed through QPay's payment infrastructure.",
+      answer: "You open QPay, enter the amount, and your phone creates a secure QR code on device. The merchant scans it with their QPay app, and the payment instruction is then submitted for processing.",
     },
     {
       icon: faShieldHalved,
       question: "Are offline payments secure?",
-      answer: "QPay is designed to support secure QR payment experiences for customers and merchants. Payment processing follows the relevant payment infrastructure.",
+      answer: "QPay is designed to support secure QR payment experiences for customers and merchants. Transaction details are shown before you confirm a payment.",
     },
     {
       icon: faUsers,
@@ -42,7 +42,7 @@ const FAQs = () => {
     {
       icon: faGaugeHigh,
       question: "Is there a limit to offline payments?",
-      answer: "Offline QR codes may have a temporary limit for security. When your phone reconnects, transaction history and balance can sync through QPay's payment infrastructure.",
+      answer: "Offline QR codes may have a temporary limit for security. When your phone reconnects, transaction history and balance can sync through QPay.",
     }
   ];
 

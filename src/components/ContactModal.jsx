@@ -1,12 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { gsap } from "gsap";
 import { FiX } from "react-icons/fi";
 import { RotatingLines } from "react-loader-spinner";
 import { CONTACT_MODAL_EVENT } from "../utils/contactModal";
 
-const CONTACT_API_URL = import.meta.env.VITE_QPAY_CONTACT_API_URL;
-const CONTACT_API_KEY = import.meta.env.VITE_QPAY_CONTACT_API_KEY;
+const CONTACT_API_URL = "/api/contact";
 
 const copyByVariant = {
   contact: {
@@ -27,10 +26,18 @@ const copyByVariant = {
     submitLabel: "Submit Request",
     successMessage: "Request submitted successfully.",
   },
+  waitlist: {
+    eyebrow: "Join the Waitlist",
+    heading: "Be First to Know",
+    intro: "Leave your email and we'll let you know when QPay is ready.",
+    submitLabel: "Join Waitlist",
+    successMessage: "You have been added to the waitlist.",
+  },
 };
 
 const ContactModal = ({ variant = "contact", autoOpen = false }) => {
-  const copy = copyByVariant[variant] || copyByVariant.contact;
+  const [activeVariant, setActiveVariant] = useState(variant);
+  const copy = copyByVariant[activeVariant] || copyByVariant.contact;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -44,9 +51,22 @@ const ContactModal = ({ variant = "contact", autoOpen = false }) => {
   const modalRef = useRef(null);
   const modalNoticeTimerRef = useRef(null);
 
+  const openModal = useCallback((nextVariant = variant) => {
+    setActiveVariant(nextVariant);
+    setIsModalOpen(true);
+    requestAnimationFrame(() => {
+      if (!modalRef.current) return;
+      gsap.fromTo(
+        modalRef.current,
+        { scale: 0.92, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.35, ease: "power3.out" }
+      );
+    });
+  }, [variant]);
+
   useEffect(() => {
-    const handleOpenContactModal = () => {
-      openModal();
+    const handleOpenContactModal = (event) => {
+      openModal(event.detail?.variant);
     };
 
     window.addEventListener(CONTACT_MODAL_EVENT, handleOpenContactModal);
@@ -54,11 +74,11 @@ const ContactModal = ({ variant = "contact", autoOpen = false }) => {
     return () => {
       window.removeEventListener(CONTACT_MODAL_EVENT, handleOpenContactModal);
     };
-  }, []);
+  }, [openModal]);
 
   useEffect(() => {
     if (autoOpen) openModal();
-  }, [autoOpen]);
+  }, [autoOpen, openModal]);
 
   useEffect(() => {
     return () => {
@@ -101,18 +121,6 @@ const ContactModal = ({ variant = "contact", autoOpen = false }) => {
     }, 1300);
   };
 
-  const openModal = () => {
-    setIsModalOpen(true);
-    requestAnimationFrame(() => {
-      if (!modalRef.current) return;
-      gsap.fromTo(
-        modalRef.current,
-        { scale: 0.92, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.35, ease: "power3.out" }
-      );
-    });
-  };
-
   const closeModal = () => {
     if (modalNoticeTimerRef.current) {
       clearTimeout(modalNoticeTimerRef.current);
@@ -136,31 +144,27 @@ const ContactModal = ({ variant = "contact", autoOpen = false }) => {
 
   const handleSendMessage = async () => {
     const trimmedEmail = email.trim();
-    const question = message.trim();
-    const messageLabel = variant === "privacy" ? "request" : "question";
+    const isWaitlist = activeVariant === "waitlist";
+    const question = isWaitlist ? "QPay waitlist signup" : message.trim();
+    const messageLabel = activeVariant === "privacy" ? "request" : "question";
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
       showModalError("Please enter a valid email address.");
       return;
     }
 
-    if (!question) {
+    if (!isWaitlist && !question) {
       showModalError(`Please enter a ${messageLabel}.`);
       return;
     }
 
-    if (question.length < 10) {
+    if (!isWaitlist && question.length < 10) {
       showModalError("Please enter at least 10 characters.");
       return;
     }
 
-    if (question.length > 2000) {
+    if (!isWaitlist && question.length > 2000) {
       showModalError(`Please keep your ${messageLabel} under 2000 characters.`);
-      return;
-    }
-
-    if (!CONTACT_API_URL || !CONTACT_API_KEY) {
-      showModalError("Contact form is not configured yet.");
       return;
     }
 
@@ -171,7 +175,6 @@ const ContactModal = ({ variant = "contact", autoOpen = false }) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": `Bearer ${CONTACT_API_KEY}`,
         },
         body: JSON.stringify({
           email: trimmedEmail,
@@ -186,7 +189,7 @@ const ContactModal = ({ variant = "contact", autoOpen = false }) => {
       } else {
         showModalError(
           data.message ||
-            (variant === "privacy"
+            (activeVariant === "privacy"
               ? "Failed to submit your request."
               : "Failed to send message.")
         );
@@ -208,6 +211,9 @@ const ContactModal = ({ variant = "contact", autoOpen = false }) => {
       ></div>
       <div
         ref={modalRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contact-modal-title"
         className="relative z-10 w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/70 bg-white shadow-[0_32px_90px_rgba(15,23,42,0.32),0_0_0_1px_rgba(255,255,255,0.55)]"
       >
         <div
@@ -239,7 +245,7 @@ const ContactModal = ({ variant = "contact", autoOpen = false }) => {
           <p className="relative z-10 mb-3 text-center text-[11px] font-bold uppercase tracking-[0.28em] text-white/75">
             {copy.eyebrow}
           </p>
-          <h2 className="relative z-10 mx-auto max-w-md text-center font-heading text-3xl font-bold leading-tight sm:text-4xl">
+          <h2 id="contact-modal-title" className="relative z-10 mx-auto max-w-md text-center font-heading text-3xl font-bold leading-tight sm:text-4xl">
             {copy.heading}
           </h2>
           <p className="relative z-10 mx-auto mt-4 max-w-sm text-center text-sm leading-relaxed text-white/78 sm:text-base">
@@ -262,18 +268,20 @@ const ContactModal = ({ variant = "contact", autoOpen = false }) => {
             />
           </div>
 
-          <div>
-            <label className="mb-2 block text-sm font-semibold text-slate-700" htmlFor="contact-message">
-              {copy.fieldLabel}
-            </label>
-            <textarea
-              id="contact-message"
-              placeholder={copy.placeholder}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="h-40 w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-relaxed text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-customOrange focus:bg-white focus:ring-4 focus:ring-orange-100 sm:h-44"
-            />
-          </div>
+          {activeVariant !== "waitlist" && (
+            <div>
+              <label className="mb-2 block text-sm font-semibold text-slate-700" htmlFor="contact-message">
+                {copy.fieldLabel}
+              </label>
+              <textarea
+                id="contact-message"
+                placeholder={copy.placeholder}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="h-40 w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-relaxed text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-customOrange focus:bg-white focus:ring-4 focus:ring-orange-100 sm:h-44"
+              />
+            </div>
+          )}
 
           <button
             onClick={handleSendMessage}

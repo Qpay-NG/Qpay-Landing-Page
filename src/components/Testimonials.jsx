@@ -16,14 +16,14 @@ const Testimonials = () => {
       marginTop: "mt-0",
     },
     {
-      quote: "Illustrative use case: A student prepares a QPay QR payment instruction during a period of limited connectivity; final processing follows the relevant payment infrastructure.",
+      quote: "Illustrative use case: A student prepares a QPay QR payment instruction during a period of limited connectivity; final processing follows the relevant payment network.",
       audience: "Student",
       delay: 0.15,
       isHero: false,
       marginTop: "md:mt-16",
     },
     {
-      quote: "Illustrative use case: A dispatch rider prepares payment instructions in areas with limited connectivity, while processing and confirmation follow the relevant payment infrastructure.",
+      quote: "Illustrative use case: A dispatch rider prepares payment instructions in areas with limited connectivity, while processing and confirmation follow the payment network.",
       audience: "Dispatch rider",
       delay: 0.3,
       isHero: false,
