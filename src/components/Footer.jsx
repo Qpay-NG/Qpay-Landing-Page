@@ -44,7 +44,7 @@ const socialLinks = [
 ];
 
 const linkClassName =
-  'text-[15px] font-medium text-slate-700 transition-colors duration-200 hover:text-slate-950';
+  'self-start text-left text-[15px] font-medium text-slate-700 transition-colors duration-200 hover:text-slate-950';
 
 const Footer = () => {
   return (

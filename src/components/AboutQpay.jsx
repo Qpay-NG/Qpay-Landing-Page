@@ -327,24 +327,24 @@ const AboutQpay = () => {
         }
         @media (max-width: 480px) {
           .howitw-pin {
-            min-height: 88svh;
+            min-height: 100svh;
             justify-content: center;
           }
           .howitw-grid {
-            min-height: 88svh;
+            min-height: 100svh;
             align-content: center;
             grid-template-columns: minmax(0, 1fr);
-            gap: 0.5rem;
-            padding: 0.75rem 1rem 1rem;
+            gap: 0.25rem;
+            padding: 0.25rem 1rem;
           }
           .howitw-left {
-            height: 32svh;
-            min-height: 205px;
-            max-height: 260px;
+            height: 34svh;
+            min-height: 270px;
+            max-height: 280px;
           }
           .howitw-phone {
             height: 50svh;
-            min-height: 320px;
+            min-height: 270px;
             max-height: 430px;
             width: min(64vw, 205px);
             min-width: 165px;
