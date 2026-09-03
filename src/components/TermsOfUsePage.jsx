@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-
 const tocItems = [
   ['about-qpay', '1. ABOUT QPAY'],
   ['eligibility', '2. ELIGIBILITY'],
@@ -380,18 +378,6 @@ const listClass = 'list-square space-y-3 pl-6'
 const alphaListClass = 'list-[lower-alpha] space-y-3 pl-6'
 
 function TermsOfUsePage() {
-  useEffect(() => {
-    document.title = 'Terms of Use | QPay NG'
-
-    const description = document.querySelector('meta[name="description"]')
-    if (description) {
-      description.setAttribute(
-        'content',
-        'Read the QPay NG Terms of Use governing access to and use of the QPay mobile application, website, payment services and related products.'
-      )
-    }
-  }, [])
-
   return (
     <main className="min-h-screen bg-[#f3f4f6] text-slate-900">
       <section className="border-b border-slate-200 bg-white">

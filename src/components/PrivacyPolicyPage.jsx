@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { openContactModal } from '../utils/contactModal'
 
 const tocItems = [
@@ -31,18 +30,6 @@ const legalLinkClass =
 const listClass = 'list-square space-y-3 pl-6'
 
 function PrivacyPolicyPage() {
-  useEffect(() => {
-    document.title = 'Privacy Policy | QPay NG'
-
-    const description = document.querySelector('meta[name="description"]')
-    if (description) {
-      description.setAttribute(
-        'content',
-        'Read the QPay NG Privacy Policy to understand how personal information is collected, used, stored, and shared on qpay-ng.com and related services.'
-      )
-    }
-  }, [])
-
   return (
     <main className="min-h-screen bg-[#f3f4f6] text-slate-900">
       <section className="border-b border-slate-200 bg-white">

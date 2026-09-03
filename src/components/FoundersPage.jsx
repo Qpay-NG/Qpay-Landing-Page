@@ -61,7 +61,7 @@ const FoundersPage = () => {
               The Founders
             </p>
             <h1 className="mt-5 text-4xl font-extrabold tracking-[-0.04em] text-slate-950 sm:text-5xl md:text-6xl">
-              Built by people who understand why payments cannot wait
+              Meet the QPay Founders
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
               QPay was created to make payments dependable in the real places where weak connectivity slows down commerce and everyday life.

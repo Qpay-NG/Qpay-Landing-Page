@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-
 const legalLinkClass =
   'font-medium text-slate-800 underline decoration-slate-400 underline-offset-4 hover:text-slate-950'
 
@@ -66,18 +64,6 @@ const browserLinks = [
 ]
 
 function CookiesPolicyPage() {
-  useEffect(() => {
-    document.title = 'Cookies Policy | QPay NG'
-
-    const description = document.querySelector('meta[name="description"]')
-    if (description) {
-      description.setAttribute(
-        'content',
-        'Read the QPay NG Cookies Policy to understand how cookies are used on qpay-ng.com and the choices available to website visitors.'
-      )
-    }
-  }, [])
-
   return (
     <main className="min-h-screen bg-[#f3f4f6] text-slate-900">
       <section className="border-b border-slate-200 bg-white">

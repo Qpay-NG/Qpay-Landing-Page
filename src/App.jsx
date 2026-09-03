@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import './App.css'
 import Hero from './components/Hero'
 import AboutQpay from './components/AboutQpay'
@@ -10,6 +11,7 @@ import PrivacyPolicyPage from './components/PrivacyPolicyPage'
 import TermsOfUsePage from './components/TermsOfUsePage'
 import FoundersPage from './components/FoundersPage'
 import ContactModal from './components/ContactModal'
+import { applyPageMetadata } from './utils/pageMetadata'
 
 function App() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
@@ -18,6 +20,10 @@ function App() {
   const isTermsOfUsePage = pathname === '/terms-of-use'
   const isContactUsPage = pathname === '/contact-us'
   const isFoundersPage = pathname === '/founders'
+
+  useEffect(() => {
+    applyPageMetadata(pathname)
+  }, [pathname])
 
   return (
     <div>

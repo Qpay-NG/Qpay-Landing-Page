@@ -15,7 +15,7 @@ describe('Founders route', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: /built by people who understand why payments cannot wait/i,
+        name: /meet the qpay founders/i,
       })
     ).toBeInTheDocument();
   });
