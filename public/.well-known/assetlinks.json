@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.qpayng",
+      "sha256_cert_fingerprints": [
+        "D8:14:02:83:9F:5B:3D:65:53:C3:7C:17:7F:20:BA:D2:F8:CB:2C:61:14:DD:64:C8:8D:A0:CE:39:91:DB:F3:C1"
+      ]
+    }
+  }
+]
